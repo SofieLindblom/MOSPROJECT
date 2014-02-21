@@ -13,13 +13,20 @@
 			var balls = []; 
 
 
-			camera.position.x = 30;
-       		camera.position.y = 15;
-       		camera.position.z = 30;
+			camera.position.x = 100;
+       		camera.position.y = 50;
+       		camera.position.z = 100;
 
 			var light = new THREE.SpotLight();
 	      	light.position.set( 10, 100, 50 );
 	      	scene.add(light);
+
+	      	var Nr_of_balls = 50;
+	      	var primary_energy_loss = 0.9;
+	      	var secondary_energy_loss = 0.95;
+	      	var max_nr_of_bounces = 50;
+	      	var time = 0;
+	      	var dt = 0;
 
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
@@ -34,11 +41,19 @@
 	      	litCube.position.z = 1;
 	      	scene.add(litCube);
 
-	      	var planeGeo = new THREE.PlaneGeometry(400, 200, 10, 10);
+	      	var planeGeo = new THREE.PlaneGeometry(100, 100, 10, 10);
 			  var planeMat = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
-			  var plane = new THREE.Mesh(planeGeo, planeMat);
+			  var plane = new THREE.Mesh(planeGeo, planeMat);		
 			  plane.rotation.x = -Math.PI/2;
-			  plane.position.y = -25;
+			  plane.position.y = -50;
+			  
+			var cube = new THREE.Mesh(new THREE.CubeGeometry(100, 100, 100), new THREE.MeshBasicMaterial({
+        	wireframe: true,
+        	color: 'blue'}));
+      		
+      		scene.add(cube);
+
+
 			  plane.receiveShadow = true;
 			  scene.add(plane);
 
@@ -47,7 +62,7 @@
 			//var sphere = new THREE.Mesh( geometry, material );
 
 			var geom = new THREE.SphereGeometry(1,16,12);
-			    for (var i = 0; i < 5; i++) {
+			    for (var i = 0; i < Nr_of_balls; i++) {
 			        var ball = {};
 			        ball.obj = new THREE.Mesh( 
 			            geom, 
@@ -58,9 +73,10 @@
 			        ball.x = 18*Math.random() - 9;   // set random ball position
 			        ball.y = 18*Math.random() - 9;
 			        ball.z = 18*Math.random() - 9;
-			        ball.dx = Math.random() * 6 + 3;  // set random ball velocity, in units per second
-			        ball.dy = Math.random() * 6 + 3;
-			        ball.dz = Math.random() * 6 + 3;
+			        ball.dx = Math.random();  // set random ball velocity, in units per second
+			        ball.dy = Math.random();
+			        ball.dz = Math.random();
+			        ball.count = 0;
 			        if (Math.random() < 0.5)
 			            ball.dx = -ball.dx;
 			        if (Math.random() < 0.5)
@@ -160,8 +176,160 @@
 		        litCube.position.x = Math.sin(t/1000)*7;
 		        litCube.position.y = Math.cos(t/1000)*5;
 		        litCube.position.z = 15;
-
 		        
+		        
+		        dt = t-time;
+		        time = t;
+
+		        console.log(dt);
+
+		        for (var i = 0; i < Nr_of_balls; i++) {
+		        
+
+    //If ball hits ground y-direction
+			    if(balls[i].y <= -49){
+			    	balls[i].dy =  -balls[i].dy*primary_energy_loss;
+			    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
+			    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
+			    	//balls[i].dy =  balls[i].dy - 9.82/1000;
+			    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+					balls[i].y = balls[i].y  + balls[i].dy;
+					balls[i].z = balls[i].z  + balls[i].dz;
+					balls[i].count++;
+					if(balls[i].count>max_nr_of_bounces && balls[i].y < -48)
+					{
+						balls[i].dy =  0;
+				    	balls[i].dx =  0;
+				    	balls[i].dz =  0;
+					}
+				}
+				else if(balls[i].x < -49 || balls[i].x > 49){
+			    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
+			    	balls[i].dx =  -balls[i].dx*primary_energy_loss;
+			    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
+			    	balls[i].dy =  balls[i].dy - 9.82*dt/1000;
+
+
+			    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+					balls[i].y = balls[i].y  + balls[i].dy;
+					balls[i].z = balls[i].z  + balls[i].dz;
+					balls[i].count++;
+				}
+				else if(balls[i].z < -49 || balls[i].z > 49){
+			    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
+			    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
+			    	balls[i].dz =  -balls[i].dz*primary_energy_loss;
+			    	balls[i].dy =  balls[i].dy - 9.82*dt/1000;
+
+			    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+					balls[i].y = balls[i].y  + balls[i].dy;
+					balls[i].z = balls[i].z  + balls[i].dz;
+					balls[i].count++;
+				}
+				else{
+					if(balls[i].y > -49){
+					balls[i].dy =  balls[i].dy - 9.82*dt/1000;
+					}
+					balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+					balls[i].y = balls[i].y  + balls[i].dy;
+					balls[i].z = balls[i].z  + balls[i].dz;
+					
+				}
+				
+    /*if p_matrix(2, index_old) <= 0 %&& v_matrix(2, index_old) <= 0 
+        %x-pos
+        v_matrix(1, index_new) = v_matrix(1, index_old); 
+        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
+        %y-pos
+        p_matrix(2, index_old) = 0;
+        v_matrix(2, index_new) = -(0.90*v_matrix(2, index_old)) + grav(2)*delta_t;
+        p_matrix(2, index_new) = v_matrix(2, index_new)*delta_t;
+        %z-pos
+        v_matrix(3, index_new) = v_matrix(3, index_old); 
+        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+        count = count +1;
+   /* %If ball hits wall x = 0 in x-direction
+    elseif p_matrix(1, index_old) <= 0
+        %x-pos
+        p_matrix(1, index_old) = 0;
+        v_matrix(1, index_new) = -(0.90*v_matrix(1, index_old)) 
+        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
+        % y-pos
+        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
+        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
+        % z-pos
+        v_matrix(3, index_new) = v_matrix(3, index_old); 
+        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+        count = count +1;
+        %If ball hits wall x = 300 in x-direction
+    elseif p_matrix(1, index_old) >= 300 
+        %x-pos
+        p_matrix(1, index_old) = 300;
+        v_matrix(1, index_new) = -(0.90*v_matrix(1, index_old)); 
+        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
+        % y-pos
+        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
+        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
+        % z-pos
+        v_matrix(3, index_new) = v_matrix(3, index_old); 
+        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+        count = count +1;
+    %If ball hits wall z = 0 in z-direction
+    elseif p_matrix(3, index_old) <= 0
+        %x-pos
+        v_matrix(1, index_new) = v_matrix(1, index_old); 
+        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
+        % y-pos
+        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
+        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
+        % z-pos
+        p_matrix(3, index_old) = 0;
+        v_matrix(3, index_new) = -(0.90*v_matrix(3, index_old)); 
+        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+        count = count +1;
+         %If ball hits wall z = 300 in z-direction
+    elseif p_matrix(3, index_old) >= 300 
+        %x-pos
+        v_matrix(1, index_new) = v_matrix(1, index_old); 
+        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
+        % y-pos
+        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
+        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
+        % z-pos
+        p_matrix(3, index_old) = 300;
+        v_matrix(3, index_new) = -(0.90*v_matrix(3, index_old)); 
+        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+        count = count +1;
+    %If no collision between ball and wall
+    else 
+        %x-pos
+        v_matrix(1, index_new) = v_matrix(1, index_old); 
+        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
+        % y-pos
+        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t;
+        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
+        % z-pos
+        v_matrix(3, index_new) = v_matrix(3, index_old); 
+        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+
+    end
+    
+    if count>50
+        v_matrix(1:3,dt:length+1)=0;
+        p_matrix(1:3,dt:length+1)=0;
+
+    end
+end*/
+
+			        balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i].z );
+			        //balls[i].obj.position.y = balls[i].y;
+			        //balls[i].obj.position.z = balls[i].z;
+
+			        //balls[i].dx = Math.random() * 6 + 3;  // set random ball velocity, in units per second
+			        
+			        //balls[i].dz = Math.random() * 6 + 3;
+
+		        }
   
 
 		        //light.position.set( 10, 10, Math.cos(t/1000)*30 );
