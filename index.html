@@ -1,37 +1,63 @@
 <html>
 	<head>
-		<title>My first Three.js app</title>
+		<title>AMAZEBALLS</title>
 		<style>canvas { width: 100%; height: 100% }</style>
 	</head>
 	<body>
 		<script src="https://rawgithub.com/mrdoob/three.js/master/build/three.js"></script>
+		<script src="Lib/three.min.js"></script>
+		<script src="Lib/TrackballControls.js"></script>
+		<script src="Lib/stats.min.js"></script>
+		<script src="Lib/Detector.js"></script>
+		
 		<script>
-
-
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+			
+			//Global variables
 			var balls = []; 
-
-
-			camera.position.x = 100;
-       		camera.position.y = 50;
-       		camera.position.z = 100;
-
-			var light = new THREE.SpotLight();
-	      	light.position.set( 10, 100, 50 );
-	      	scene.add(light);
-
-	      	var Nr_of_balls = 50;
+			var Nr_of_balls = 50;
 	      	var primary_energy_loss = 0.9;
 	      	var secondary_energy_loss = 0.95;
 	      	var max_nr_of_bounces = 50;
 	      	var time = 0;
 	      	var dt = 0;
+	      	var change;
 
-			var renderer = new THREE.WebGLRenderer();
+			//Set up Scene
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			camera.position.x = 100;
+       		camera.position.y = 50;
+       		camera.position.z = 50;
+
+			var renderer = new THREE.WebGLRenderer({ antialias: false });
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
+			renderer.shadowMapEnabled = true;
 
+			//Mouse navigation
+			var controls = new THREE.TrackballControls( camera );
+
+			controls.rotateSpeed = 1.0;
+			controls.zoomSpeed = 1.2;
+			controls.panSpeed = 0.8;
+			controls.noZoom = false;
+			controls.noPan = false;
+			controls.staticMoving = true;
+			controls.dynamicDampingFactor = 0.3;
+			controls.keys = [ 65, 83, 68 ];
+			controls.addEventListener( 'change', render );
+			window.addEventListener( 'resize', onWindowResize, false );
+
+			//Axis helper
+			var axisHelper = new THREE.AxisHelper( 10 );
+			scene.add( axisHelper );
+
+       		//Add lightning
+			var light = new THREE.SpotLight();
+	      	light.position.set( 10, 100, 50 );
+	      	scene.add(light);
+	      	light.castShadow = true;
 
 			var litCube = new THREE.Mesh(
 	        new THREE.CubeGeometry(2, 3, 7),
@@ -39,41 +65,41 @@
 	      	litCube.position.y = 1;
 	      	litCube.position.x = 1;
 	      	litCube.position.z = 1;
+	      	litCube.castShadow = true;
+	      	litCube.receiveShadow = true;
 	      	scene.add(litCube);
 
+	      	//Add ground plane
 	      	var planeGeo = new THREE.PlaneGeometry(100, 100, 10, 10);
-			  var planeMat = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
-			  var plane = new THREE.Mesh(planeGeo, planeMat);		
-			  plane.rotation.x = -Math.PI/2;
-			  plane.position.y = -50;
-			  
+			var planeMat = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
+			var plane = new THREE.Mesh(planeGeo, planeMat);		
+			plane.rotation.x = -Math.PI/2;
+			plane.position.y = -50;
+			
+			//Add wireframe for box  
 			var cube = new THREE.Mesh(new THREE.CubeGeometry(100, 100, 100), new THREE.MeshBasicMaterial({
         	wireframe: true,
-        	color: 'blue'}));
-      		
+        	color: 'blue'}));      		
       		scene.add(cube);
+			plane.receiveShadow = true;
+			scene.add(plane);
 
-
-			  plane.receiveShadow = true;
-			  scene.add(plane);
-
-			//var geometry = new THREE.SphereGeometry( 5 );
-			//var material = new THREE.MeshBasicMaterial( { color: 0xff00ff } );
-			//var sphere = new THREE.Mesh( geometry, material );
-
-			var geom = new THREE.SphereGeometry(1,16,12);
+			//Create balls and store in array
+			var geom = new THREE.SphereGeometry(1,16,16);
 			    for (var i = 0; i < Nr_of_balls; i++) {
-			        var ball = {};
-			        ball.obj = new THREE.Mesh( 
-			            geom, 
-			            new THREE.MeshLambertMaterial({
-			                color: Math.floor(Math.random() * 0x1000000)
+				        var ball = {};
+				        ball.obj = new THREE.Mesh( 
+				            geom, 
+				            new THREE.MeshLambertMaterial({
+				                color: Math.floor(Math.random() * 0x1000000)
 			            })
 			        );
-			        ball.x = 18*Math.random() - 9;   // set random ball position
+
+					//Set initial position and velocity
+			        ball.x = 18*Math.random() - 9;   
 			        ball.y = 18*Math.random() - 9;
 			        ball.z = 18*Math.random() - 9;
-			        ball.dx = Math.random();  // set random ball velocity, in units per second
+			        ball.dx = Math.random();  
 			        ball.dy = Math.random();
 			        ball.dz = Math.random();
 			        ball.count = 0;
@@ -88,40 +114,25 @@
 			        ball.obj.castShadow = true;
 			        ball.obj.recieveShadow = true;
 			        balls.push(ball);
-			    }
-						
-			/*			var sphere = new THREE.Mesh(
-	        new THREE.SphereGeometry( 5 ),
-	        new THREE.MeshLambertMaterial({color: 0xFFAA00}));
-			scene.add( sphere );
-*/
-			renderer.shadowMapEnabled = true;
-
-		      // enable shadows for a light
-		      light.castShadow = true;
-
-		      // enable shadows for an object
-		      litCube.castShadow = true;
-		      litCube.receiveShadow = true;
-		      //sphere.receiveShadow = true;
-		      //sphere.castShadow = true;
-
-		      var axisHelper = new THREE.AxisHelper( 10 );
-				scene.add( axisHelper );
-
-			camera.position.z = 50;
-			//var projector = new THREE.Projector();
+				}//End creation of balls
+				
+				//Adjusted window size trigged by mouse navigation 
+				function onWindowResize() {
+					camera.aspect = window.innerWidth / window.innerHeight;
+					camera.updateProjectionMatrix();
+					renderer.setSize( window.innerWidth, window.innerHeight );
+					controls.handleResize();
+					render();
+				}	
+			
+			//Navigation with arrow buttons
 			window.addEventListener('keydown', function (event){
-			  //if (event.target == renderer.domElement) {
-			  	//console.log("hejhej");
 
-			  	 /*if (!event)
-			          event = window.event;*/
 			     var code = event.keyCode;
 			     console.log(code);
 			     if (event.charCode && code == 0)
-			          code = event.charCode;
-			      //console.log(code);
+			          	code = event.charCode;
+			    
 			     switch(code) {
 			          case 37://, 65:
 			              console.log("left");
@@ -143,217 +154,95 @@
 			              camera.position.z += 2;
 			              break;
 			     }
-			    // event.preventDefault();
-			  	//var mouseX = (ev.clientX)/100; //- getElementPosition(renderer.domElement).left;
-        		//var mouseY = (ev.clientY)/100; //- getElementPosition(renderer.domElement).top;
+			}, false); //End navigation with arrow buttons
 
-        		//sphere.position.x = mouseX;
-		        //sphere.position.y = mouseY;
-			    //var x = ev.clientX;
-			    //var y = ev.clientY;
-			    //var v = new THREE.Vector3((x/width)*2-1, -(y/height)*2+1, 0.5);
-			    //projector.unprojectVector(v, camera);
-			    //var ray = new THREE.Ray(camera.position, 
-			    //                        v.subSelf(camera.position).normalize());
-			    //var intersects = ray.intersectObjects(controller.objects);
-			    //if (intersects.length > 0) {
-			    //  controller.setCurrent(intersects[0].object);
-			    //}
-			  //}
-			  //else
-			  //{
-			  //	console.log("hejhej2")
-			  //}
-			}, false);
-
-
+			//Update object's positions: 60 frames/second (?)
 			function animate(t) {
-		        // spin the sphere in a circle
-		        //sphere.position.x = Math.sin(t/500)*15;
-		        //sphere.position.y = Math.cos(t/500)*12;
-		        //sphere.position.z = 0;
 
 		        litCube.position.x = Math.sin(t/1000)*7;
 		        litCube.position.y = Math.cos(t/1000)*5;
 		        litCube.position.z = 15;
-		        
-		        
-		        dt = t-time;
-		        time = t;
-
-		        console.log(dt);
+		        		        
+		        //Clock är inbyggd i threejs, tror det är vad vi ska använda, kika på andra balls exemplet
+		        //dt = t-time;
+		        //time = t;
+		        //console.log(dt);
+		        //var dt = clock.getDelta(); 
 
 		        for (var i = 0; i < Nr_of_balls; i++) {
 		        
+		    			//If ball hits ground y-direction
+					    if(balls[i].y <= -49){
+					    	balls[i].dy =  -balls[i].dy*primary_energy_loss;
+					    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
+					    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
+					    	//balls[i].dy =  balls[i].dy - 9.82/1000;
+					    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+							balls[i].y = balls[i].y  + balls[i].dy;
+							balls[i].z = balls[i].z  + balls[i].dz;
+							balls[i].count++;
+							//Prevent infinite number of bounces
+							if(balls[i].count>max_nr_of_bounces && balls[i].y < -48)
+							{
+								balls[i].dy =  0;
+						    	balls[i].dx =  0;
+						    	balls[i].dz =  0;
+							}
+						}
+						else if(balls[i].x < -49 || balls[i].x > 49){
+					    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
+					    	balls[i].dx =  -balls[i].dx*primary_energy_loss;
+					    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
+					    	balls[i].dy =  balls[i].dy - 9.82/1000;
 
-    //If ball hits ground y-direction
-			    if(balls[i].y <= -49){
-			    	balls[i].dy =  -balls[i].dy*primary_energy_loss;
-			    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
-			    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
-			    	//balls[i].dy =  balls[i].dy - 9.82/1000;
-			    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
-					balls[i].y = balls[i].y  + balls[i].dy;
-					balls[i].z = balls[i].z  + balls[i].dz;
-					balls[i].count++;
-					if(balls[i].count>max_nr_of_bounces && balls[i].y < -48)
-					{
-						balls[i].dy =  0;
-				    	balls[i].dx =  0;
-				    	balls[i].dz =  0;
-					}
-				}
-				else if(balls[i].x < -49 || balls[i].x > 49){
-			    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
-			    	balls[i].dx =  -balls[i].dx*primary_energy_loss;
-			    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
-			    	balls[i].dy =  balls[i].dy - 9.82*dt/1000;
 
+					    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+							balls[i].y = balls[i].y  + balls[i].dy;
+							balls[i].z = balls[i].z  + balls[i].dz;
+							balls[i].count++;
+						}
+						else if(balls[i].z < -49 || balls[i].z > 49){
+					    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
+					    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
+					    	balls[i].dz =  -balls[i].dz*primary_energy_loss;
+					    	balls[i].dy =  balls[i].dy - 9.82/1000;
 
-			    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
-					balls[i].y = balls[i].y  + balls[i].dy;
-					balls[i].z = balls[i].z  + balls[i].dz;
-					balls[i].count++;
-				}
-				else if(balls[i].z < -49 || balls[i].z > 49){
-			    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
-			    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
-			    	balls[i].dz =  -balls[i].dz*primary_energy_loss;
-			    	balls[i].dy =  balls[i].dy - 9.82*dt/1000;
+					    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+							balls[i].y = balls[i].y  + balls[i].dy;
+							balls[i].z = balls[i].z  + balls[i].dz;
+							balls[i].count++;
+						}
+						else{
+							if(balls[i].y > -49){
+							balls[i].dy =  balls[i].dy - 9.82/1000;
+							}
+							balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+							balls[i].y = balls[i].y  + balls[i].dy;
+							balls[i].z = balls[i].z  + balls[i].dz;
+						}
 
-			    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
-					balls[i].y = balls[i].y  + balls[i].dy;
-					balls[i].z = balls[i].z  + balls[i].dz;
-					balls[i].count++;
-				}
-				else{
-					if(balls[i].y > -49){
-					balls[i].dy =  balls[i].dy - 9.82*dt/1000;
-					}
-					balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
-					balls[i].y = balls[i].y  + balls[i].dy;
-					balls[i].z = balls[i].z  + balls[i].dz;
-					
-				}
-				
-    /*if p_matrix(2, index_old) <= 0 %&& v_matrix(2, index_old) <= 0 
-        %x-pos
-        v_matrix(1, index_new) = v_matrix(1, index_old); 
-        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
-        %y-pos
-        p_matrix(2, index_old) = 0;
-        v_matrix(2, index_new) = -(0.90*v_matrix(2, index_old)) + grav(2)*delta_t;
-        p_matrix(2, index_new) = v_matrix(2, index_new)*delta_t;
-        %z-pos
-        v_matrix(3, index_new) = v_matrix(3, index_old); 
-        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
-        count = count +1;
-   /* %If ball hits wall x = 0 in x-direction
-    elseif p_matrix(1, index_old) <= 0
-        %x-pos
-        p_matrix(1, index_old) = 0;
-        v_matrix(1, index_new) = -(0.90*v_matrix(1, index_old)) 
-        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
-        % y-pos
-        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
-        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
-        % z-pos
-        v_matrix(3, index_new) = v_matrix(3, index_old); 
-        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
-        count = count +1;
-        %If ball hits wall x = 300 in x-direction
-    elseif p_matrix(1, index_old) >= 300 
-        %x-pos
-        p_matrix(1, index_old) = 300;
-        v_matrix(1, index_new) = -(0.90*v_matrix(1, index_old)); 
-        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
-        % y-pos
-        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
-        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
-        % z-pos
-        v_matrix(3, index_new) = v_matrix(3, index_old); 
-        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
-        count = count +1;
-    %If ball hits wall z = 0 in z-direction
-    elseif p_matrix(3, index_old) <= 0
-        %x-pos
-        v_matrix(1, index_new) = v_matrix(1, index_old); 
-        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
-        % y-pos
-        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
-        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
-        % z-pos
-        p_matrix(3, index_old) = 0;
-        v_matrix(3, index_new) = -(0.90*v_matrix(3, index_old)); 
-        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
-        count = count +1;
-         %If ball hits wall z = 300 in z-direction
-    elseif p_matrix(3, index_old) >= 300 
-        %x-pos
-        v_matrix(1, index_new) = v_matrix(1, index_old); 
-        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
-        % y-pos
-        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t; 
-        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
-        % z-pos
-        p_matrix(3, index_old) = 300;
-        v_matrix(3, index_new) = -(0.90*v_matrix(3, index_old)); 
-        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
-        count = count +1;
-    %If no collision between ball and wall
-    else 
-        %x-pos
-        v_matrix(1, index_new) = v_matrix(1, index_old); 
-        p_matrix(1, index_new) = p_matrix(1, index_old) + v_matrix(1, index_new)*delta_t;
-        % y-pos
-        v_matrix(2, index_new) = v_matrix(2, index_old) + grav(2)*delta_t;
-        p_matrix(2, index_new) = p_matrix(2, index_old) + v_matrix(2, index_new)*delta_t;
-        % z-pos
-        v_matrix(3, index_new) = v_matrix(3, index_old); 
-        p_matrix(3, index_new) = p_matrix(3, index_old) + v_matrix(3, index_new)*delta_t;
+				     balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i].z );
+				     controls.update();
 
-    end
-    
-    if count>50
-        v_matrix(1:3,dt:length+1)=0;
-        p_matrix(1:3,dt:length+1)=0;
+		        } //End for Loop
 
-    end
-end*/
-
-			        balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i].z );
-			        //balls[i].obj.position.y = balls[i].y;
-			        //balls[i].obj.position.z = balls[i].z;
-
-			        //balls[i].dx = Math.random() * 6 + 3;  // set random ball velocity, in units per second
-			        
-			        //balls[i].dz = Math.random() * 6 + 3;
-
-		        }
-  
-
-		        //light.position.set( 10, 10, Math.cos(t/1000)*30 );
-		        // you need to update lookAt every frame
 		        camera.lookAt(scene.position);
 		        // renderer automatically clears unless autoClear = false
 		        renderer.render(scene, camera);
 		        window.requestAnimationFrame(animate, renderer.domElement);
-		      };
-		      animate(new Date().getTime());
 
+		    }; //End animate functon
 
-		      function degInRad(deg) {
+		    
+		    animate(new Date().getTime()) ;
+
+		    function degInRad(deg) {
 			    return deg * Math.PI / 180;
 			}  
 
-
-			/*function render() {
-				requestAnimationFrame(render);
-				//sphere.rotation.x += 0.1;
-				//sphere.rotation.y += 0.1;
-				renderer.render(scene, camera);
+			function render() {
+				renderer.render( scene, camera );
 			}
-			render();*/
 		</script>
 	</body>
 </html>

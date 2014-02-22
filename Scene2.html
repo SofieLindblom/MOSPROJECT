@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>My Second Three.js app</title>
+		<style>canvas { width: 100%; height: 100% }</style>
+	</head>
+	<body>
+		<script src="https://rawgithub.com/mrdoob/three.js/master/build/three.js"></script>
+		<script>
+
+		var renderer = new THREE.WebGLRenderer({antialias: true});
+      	renderer.setSize(document.body.clientWidth, 
+        document.body.clientHeight);
+
+        document.body.appendChild(renderer.domElement);
+        renderer.setClearColorHex(0xEEEEEE, 1.0);
+        //renderer.clear();
+        // new THREE.PerspectiveCamera( FOV, viewAspectRatio, zNear, zFar );
+		var camera = new THREE.PerspectiveCamera(45, width/height, 1, 10000);
+		camera.position.z = 300;
+
+		var scene = new THREE.Scene();
+		var cube = new THREE.Mesh(new THREE.CubeGeometry(50,50,50),
+		new THREE.MeshBasicMaterial({color: 0x000000}));
+		scene.add(cube);
+
+		renderer.render(scene, camera);
+		
+
+		</script>
+	</body>
+</html>
