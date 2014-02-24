@@ -17,9 +17,10 @@
 			var Nr_of_balls = 50;
 	      	var primary_energy_loss = 0.9;
 	      	var secondary_energy_loss = 0.95;
-	      	var max_nr_of_bounces = 50;
+	      	var max_nr_of_bounces = 100;
 	      	var time = 0;
 	      	var dt = 0;
+	      	var temp = 0.0;
 	      	var change;
 
 			//Set up Scene
@@ -177,13 +178,25 @@
 					    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
 					    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
 					    	//balls[i].dy =  balls[i].dy - 9.82/1000;
+
+					    	balls[i].y = -49;
+					    	if(balls[i].x < -49)
+					    		balls[i].x = -49;
+					    	else if (balls[i].x > 49)
+					    		balls[i].x = 49;
+					    	if(balls[i].z < -49)
+					    		balls[i].z = -49;
+					    	else if (balls[i].z > 49)
+					    		balls[i].z = 49;
+
 					    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
 							balls[i].y = balls[i].y  + balls[i].dy;
 							balls[i].z = balls[i].z  + balls[i].dz;
 							balls[i].count++;
 							//Prevent infinite number of bounces
-							if(balls[i].count>max_nr_of_bounces && balls[i].y < -48)
+							if(balls[i].count>max_nr_of_bounces) //&& balls[i].y < -48)
 							{
+								balls[i].y = -49;
 								balls[i].dy =  0;
 						    	balls[i].dx =  0;
 						    	balls[i].dz =  0;
@@ -195,6 +208,14 @@
 					    	balls[i].dz =  balls[i].dz*secondary_energy_loss;
 					    	balls[i].dy =  balls[i].dy - 9.82/1000;
 
+					    	if(balls[i].x < -49)
+					    		balls[i].x = -49;
+					    	else
+					    		balls[i].x = 49;
+					    	if(balls[i].z < -49)
+					    		balls[i].z = -49;
+					    	else if(balls[i].z > 49)
+					    		balls[i].z = 49;
 
 					    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
 							balls[i].y = balls[i].y  + balls[i].dy;
@@ -206,6 +227,12 @@
 					    	balls[i].dx =  balls[i].dx*secondary_energy_loss;
 					    	balls[i].dz =  -balls[i].dz*primary_energy_loss;
 					    	balls[i].dy =  balls[i].dy - 9.82/1000;
+
+
+					    	if(balls[i].z < -49)
+					    		balls[i].z = -49;
+					    	else
+					    		balls[i].z = 49;
 
 					    	balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
 							balls[i].y = balls[i].y  + balls[i].dy;
@@ -222,6 +249,60 @@
 						}
 
 				     balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i].z );
+
+				     for (var j = 0; j < Nr_of_balls; j++) {
+				     	if(i!=j && collision(balls[i], balls[j]) == true)
+				     	{
+				     		// Följande är ungefär så vi borde göra men funkar ej så bra
+
+
+				     		/*//get velocities for the colliding balls
+				     		var v1 = new THREE.Vector3( balls[i].dx, balls[i].dy, balls[i].dz );
+				     		var v2 = new THREE.Vector3( balls[j].dx, balls[j].dy, balls[j].dz );
+				     		
+				     		//calculate the normal and tangent vectors before the collision
+				     		var normal = new THREE.Vector3( v1.x-v2.x, v1.y-v2.y, v1.z-v2.z );
+				     		var tangent = new THREE.Vector3( v1.x-normal.x, v1.y-normal.y, v1.z-normal.z );
+
+				     		//get normal and tangent projections for v1 and v2
+				     		var v1n = v1.projectOnVector(normal);
+				     		var v1t = v1.projectOnVector(tangent);
+
+				     		var v2n = v2.projectOnVector(normal);
+				     		var v2t = v2.projectOnVector(tangent);
+
+				     		// v1a = vel for ball 1 after collision = the normal composant of ball 2 + the tangent component for ball 1
+				     		var v1a = new THREE.Vector3( v2n.x + v1t.x, v2n.y + v1t.y, v2n.z + v1t.z);
+				     		var v2a = new THREE.Vector3( v1n.x + v2t.x, v1n.y + v2t.y, v1n.z + v2t.z);
+
+				     		//assign the computed velosity (times a energy loss) to the balls in the vector.
+				     		balls[i].dx = v1a.x*secondary_energy_loss;
+				     		balls[i].dy = v1a.y*secondary_energy_loss;
+				     		balls[i].dz = v1a.z*secondary_energy_loss;
+
+				     		balls[j].dx = v2a.x*secondary_energy_loss;
+				     		balls[j].dy = v2a.y*secondary_energy_loss;
+				     		balls[j].dz = v2a.z*secondary_energy_loss;
+
+
+				     		balls[i].count -= 5;
+				     		balls[j].count -= 5; */
+				     		
+				     		temp = balls[i].dx;
+				     		balls[i].dx = balls[j].dx;
+				     		balls[j].dx = temp;
+
+				     		temp = balls[i].dy;
+				     		balls[i].dy = balls[j].dy;
+				     		balls[j].dy = temp;
+
+				     		temp = balls[i].dz;
+				     		balls[i].dz = balls[j].dz;
+				     		balls[j].dz = temp;
+
+				     	}
+				     }
+
 				     controls.update();
 
 		        } //End for Loop
@@ -236,6 +317,15 @@
 		    
 		    animate(new Date().getTime()) ;
 
+		    function collision(ballA, ballB)
+		    {
+		    	var distance = new THREE.Vector3( ballA.x-ballB.x, ballA.y-ballB.y, ballA.z-ballB.z );
+		    	if(distance.length()<2)
+		    		return true;
+		    	else
+		    		return false;
+
+		    }
 		    function degInRad(deg) {
 			    return deg * Math.PI / 180;
 			}  
