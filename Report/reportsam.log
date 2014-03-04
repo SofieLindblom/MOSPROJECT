@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.3)  3 MAR 2014 17:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.3)  4 MAR 2014 21:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -138,14 +138,6 @@ Package: theorem 1995/11/23 v2.2c Theorem extension package (FMi)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/thp.sty
 File: thp.sty 1995/11/23 v2.2c Theorem extension package (FMi)
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks22
-\inpenc@posthook=\toks23
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-))
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
@@ -169,22 +161,30 @@ File: babel.def 2013/05/16 v3.9f Babel common definitions
 )
 Package babel Info: Making " an active character on input line 90.
 ))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
 (./reportsam.aux)
 \openout1 = `reportsam.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -250,17 +250,19 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 47.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 76.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -268,11 +270,8 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
- [1]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
- (./reportsam.toc)
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
+ [1] (./reportsam.toc)
 \tf@toc=\write3
 \openout3 = `reportsam.toc'.
 
@@ -288,25 +287,20 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 ]
 Kapitel 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 69.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 129.
+
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
-
-Overfull \hbox (20.97188pt too wide) in paragraph at lines 79--80
-\OT1/ptm/m/n/12 kun-ska-per ut-veck-lats. Ett []overgripande syf-te har va-rit 
-f[]or stu-den-ter-na att v[]aga oli-ka tillv[]agag[]angss[]att
- []
-
-[1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
+ [1
 
 ]
 Kapitel 2.
 
-Underfull \hbox (badness 10000) in alignment at lines 89--100
+Underfull \hbox (badness 10000) in alignment at lines 149--160
 [][][][][]
  []
 
@@ -319,14 +313,14 @@ f>
 (epstopdf)                    size: 25638 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/block_simulink-eps
 -converted-to.pdf Figures/block_simulink.eps>
-(epstopdf)             \includegraphics on input line 106.
+(epstopdf)             \includegraphics on input line 166.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/block_simulink-eps-converted-to.pdf, id=21, 433.62pt x 308.15125pt>
+<Figures/block_simulink-eps-converted-to.pdf, id=24, 433.62pt x 308.15125pt>
 File: Figures/block_simulink-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/block_simulink-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/block_simulink-eps-converted-to.pdf used on in
-put line 106.
+put line 166.
 (pdftex.def)             Requested size: 312.9803pt x 222.42825pt.
 Package epstopdf Info: Source file: <Figures/result.eps>
 (epstopdf)                    date: 2006-10-17 13:54:58
@@ -336,23 +330,23 @@ Package epstopdf Info: Source file: <Figures/result.eps>
 (epstopdf)                    size: 5242 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/result-eps-convert
 ed-to.pdf Figures/result.eps>
-(epstopdf)             \includegraphics on input line 131.
+(epstopdf)             \includegraphics on input line 191.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/result-eps-converted-to.pdf, id=22, 479.7925pt x 377.41pt>
+<Figures/result-eps-converted-to.pdf, id=25, 479.7925pt x 377.41pt>
 File: Figures/result-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/result-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/result-eps-converted-to.pdf used on input line
- 131.
+ 191.
 (pdftex.def)             Requested size: 199.16928pt x 156.66829pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 137.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 197.
  [2
 
 ] [3 <./Figures/block_simulink-eps-converted-to.pdf> <./Figures/result-eps-conv
 erted-to.pdf>]
-Overfull \hbox (47.61362pt too wide) in paragraph at lines 148--151
+Overfull \hbox (47.61362pt too wide) in paragraph at lines 208--211
 \OT1/ptm/m/n/12 A word or two to con-clu-de, and this even in-clu-des so-me in-
 li-ne mat-hs: $\OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; t\OT1/cmr
 /m/n/12 ) \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 t[]g\OT1/cmr/m/n/12 (\OML/cmm/m
@@ -362,39 +356,42 @@ sy/m/n/12 j\OML/cmm/m/it/12 =t[]\OT1/cmr/m/n/12 )$
 
 [4]
 Kapitel 3.
-No file reportsam.bbl.
-[5
+(./reportsam.bbl [5
+
+]) [6
 
 ]
 Bilaga A.
-[6
+[7
 
 ]
 Bilaga B.
-[7
+[8
 
 ] (./reportsam.aux) ) 
 Here is how much of TeX's memory you used:
- 3091 strings out of 493315
- 41717 string characters out of 6137905
- 104374 words of memory out of 5000000
- 6452 multiletter control sequences out of 15000+600000
- 23793 words of font info for 65 fonts, out of 8000000 for 9000
+ 3121 strings out of 493315
+ 42131 string characters out of 6137905
+ 104336 words of memory out of 5000000
+ 6473 multiletter control sequences out of 15000+600000
+ 34419 words of font info for 84 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,7n,27p,559b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,27p,241b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8
 r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
 .pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on reportsam.pdf (11 pages, 109780 bytes).
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on reportsam.pdf (12 pages, 126136 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

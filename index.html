@@ -190,6 +190,7 @@
 
 		    function bounce_check()
 		    {
+		    	//Go through every ball and check for collision with walls and other balls
 		    	 for (var i = 0; i < Nr_of_balls; i++) {
 		        
 		    			//If ball hits ground y-direction
@@ -214,13 +215,7 @@
 							//balls[i].z = balls[i].z  + balls[i].dz;
 							balls[i].count++;
 							//Prevent infinite number of bounces
-							if(balls[i].count>max_nr_of_bounces) //&& balls[i].y < -48)
-							{
-								balls[i].y = -49;
-								balls[i].dy =  0;
-						    	balls[i].dx =  0;
-						    	balls[i].dz =  0;
-							}
+
 						}
 						else if(balls[i].x < -49 || balls[i].x > 49){
 					    	balls[i].dy =  balls[i].dy*secondary_energy_loss;
@@ -264,10 +259,8 @@
 			     for (var j = 0; j < Nr_of_balls; j++) {
 			     	if(i!=j && collision(balls[i], balls[j]) == true)
 			     	{
-			     		// Följande är ungefär så vi borde göra men funkar ej så bra
 
-
-			     		//get velocities for the colliding balls
+			     		//get velocities and positions for the colliding balls
 			     		var v1 = new THREE.Vector3( balls[i].dx, balls[i].dy, balls[i].dz );
 			     		var v2 = new THREE.Vector3( balls[j].dx, balls[j].dy, balls[j].dz );
 			     		var p1 = new THREE.Vector3( balls[i].dx, balls[i].dy, balls[i].dz );
@@ -287,8 +280,6 @@
 						var len = normal.length();
 			     		//console.log(len + " <- normal length");
 			     		normal.normalize();
-
-
 
 
 			     		// http://stackoverflow.com/questions/11132681/what-is-a-formula-to-get-a-vector-perpendicular-to-another-vector		     		
@@ -311,15 +302,19 @@
 			     		var v2n = v2.projectOnVector(normal);
 			     		var v2t = v2.projectOnVector(tangent);
 
-			     		// v1a = vel for ball 1 after collision = the normal composant of ball 2 + the tangent component for ball 1
+			     		
+			     		//Formula for vi and v2 after collision from book
 			     		var v2an = new THREE.Vector3((secondary_energy_loss*(v1n.x - v2n.x) + v1n.x + v2n.x)/2, 
 			     										(secondary_energy_loss*(v1n.y - v2n.y) + v1n.y + v2n.y)/2,
 			     										(secondary_energy_loss*(v1n.z - v2n.z) + v1n.z + v2n.z)/2);
-
-			     		var v1an = new THREE.Vector3(v1n.x+v2n.x-v2an.x, v1n.y+v2n.y-v2an.y, v1n.z+v2n.z-v2an.z);
+			     		var v1an = new THREE.Vector3(v1n.x + v2n.x - v2an.x, 
+										     			v1n.y + v2n.y - v2an.y, 
+										     			v1n.z + v2n.z - v2an.z);
 
 			     		var v1a = new THREE.Vector3( v1an.x + v1t.x, v1an.y + v1t.y, v1an.z + v1t.z);
 			     		var v2a = new THREE.Vector3( v2an.x + v2t.x, v2an.y + v2t.y, v2an.z + v2t.z);
+			     		
+			     		// v1a = vel for ball 1 after collision = the normal composant of ball 2 + the tangent component for ball 1
 			     		//var v1a = new THREE.Vector3( v2n.x + v1t.x, v2n.y + v1t.y, v2n.z + v1t.z);
 			     		//var v2a = new THREE.Vector3( v1n.x + v2t.x, v1n.y + v2t.y, v1n.z + v2t.z);
 
@@ -357,29 +352,37 @@
 			     		//console.log(normal.length() + "<- längd normal");
 			     		//var norm = new THREE.Vector3( p1.x-p2.x, p1.y-p2.y, p1.z-p2.z );
 			     		//var len = norm.length();
-			     		if(len>0){
-			     			var coeff = (radius)/len;
-			     			console.log(len + " <- len, coeff ->" + coeff);
+			     		if(len>=0){
+			     			var coeff = (radius*10 - len)/2;
+			     			console.log("Len>0: " + len + " <- len, coeff ->" + coeff);
 				     		balls[i].x += coeff*normal.x;
 				     		balls[i].y += coeff*normal.y;
 				     		balls[i].z += coeff*normal.z;
 
+				     		// 	balls[i].x += coeff*v1an.x;
+				     		// balls[i].y += coeff*v1an.y;
+				     		// balls[i].z += coeff*v1an.z;
+
 				     		balls[j].x -= coeff*normal.x;
 				     		balls[j].y -= coeff*normal.y;
 				     		balls[j].z -= coeff*normal.z;
-				     		console.log(normal.length());
+
+				     		// balls[j].x -= coeff*v2an.x;
+				     		// balls[j].y -= coeff*v2an.y;
+				     		// balls[j].z -= coeff*v2an.z;
+				     		
 				     	}
 			     		else
 			     		{
-			     			console.log("wtf");
-			     			console.log(normal.length() + " <- normal, len ->" + len);
-				     		balls[i].x += 1;
-				     		balls[i].y += 1;
-				     		balls[i].z += 1;
+			     			
+			     			console.log("Here it is 0 or larger than 2" + normal.length() + " <- normal, len ->" + len);
+				     		balls[i].x += 1*normal.x;
+				     		balls[i].y += 1*normal.y;
+				     		balls[i].z += 1*normal.z;
 
-				     		balls[j].x -= 1;
-				     		balls[j].y -= 1;
-				     		balls[j].z -= 1;
+				     		balls[j].x -= 1*normal.x;
+				     		balls[j].y -= 1*normal.y;
+				     		balls[j].z -= 1*normal.z;
 				     	}
 			     		/*
 			     		balls[i].x = balls[i].x  + 1.5*balls[i].dx;   // update position, constant velocity
@@ -420,6 +423,14 @@
 
 			 	} // end of j loop
 
+	 				if(balls[i].count>max_nr_of_bounces) //&& balls[i].y < -48)
+					{
+						balls[i].y = -49;
+						balls[i].dy =  0;
+				    	balls[i].dx =  0;
+				    	balls[i].dz =  0;
+					}
+
 			 		if(balls[i].y > -49){
 					balls[i].dy =  balls[i].dy - 9.82/1000;
 					}
@@ -427,6 +438,8 @@
 					balls[i].y = balls[i].y  + balls[i].dy;
 					balls[i].z = balls[i].z  + balls[i].dz;
 					balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i].z );
+
+
 			     } // end of i loop
 
 
