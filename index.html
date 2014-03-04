@@ -14,10 +14,10 @@
 			
 			//Global variables
 			var balls = []; 
-			var Nr_of_balls = 15;
+			var Nr_of_balls = 50;
 	      	var primary_energy_loss = 0.9;
 	      	var secondary_energy_loss = 0.95;
-	      	var max_nr_of_bounces = 50;
+	      	var max_nr_of_bounces = 20;
 	      	var time = 0;
 	      	var radius = 1;
 	      	var dt = 0;
@@ -279,21 +279,21 @@
 			     		//calculate the normal and tangent vectors before the collision
 			     		v1.normalize();
 			     		v2.normalize();
-			     		p1.normalize();
-			     		p2.normalize();
+			     		//p1.normalize();
+			     		//p2.normalize();
 //			     		console.log(v1.length() + " <- v1 length");
 			     		var normal = new THREE.Vector3( p1.x-p2.x, p1.y-p2.y, p1.z-p2.z );
 //			     		console.log(normal.length() + " <- normal length");
 						var len = normal.length();
-			     		console.log(len + " <- normal length");
+			     		//console.log(len + " <- normal length");
 			     		normal.normalize();
 
 
 
 
 			     		// http://stackoverflow.com/questions/11132681/what-is-a-formula-to-get-a-vector-perpendicular-to-another-vector		     		
-			     		var z2 = (-normal.x - normal.y ) / normal.z;
-			     		var tangent = new THREE.Vector3( 0.3, 0.3, z2);
+			     		var tz = (-(normal.x*0.3) - (normal.y*0.3) ) / normal.z;
+			     		var tangent = new THREE.Vector3( 0.3, 0.3, tz);
 			     		
 			     		tangent.normalize();
 			     		//console.log(normal.x);
@@ -305,40 +305,61 @@
 
 			     		//get normal and tangent projections for v1 and v2
 			     		var v1n = v1.projectOnVector(normal);
+			     		//console.log(v1n.length() );
 			     		var v1t = v1.projectOnVector(tangent);
 
 			     		var v2n = v2.projectOnVector(normal);
 			     		var v2t = v2.projectOnVector(tangent);
 
 			     		// v1a = vel for ball 1 after collision = the normal composant of ball 2 + the tangent component for ball 1
-			     		var v1a = new THREE.Vector3( v2n.x + v1t.x, v2n.y + v1t.y, v2n.z + v1t.z);
-			     		var v2a = new THREE.Vector3( v1n.x + v2t.x, v1n.y + v2t.y, v1n.z + v2t.z);
+			     		var v2an = new THREE.Vector3((secondary_energy_loss*(v1n.x - v2n.x) + v1n.x + v2n.x)/2, 
+			     										(secondary_energy_loss*(v1n.y - v2n.y) + v1n.y + v2n.y)/2,
+			     										(secondary_energy_loss*(v1n.z - v2n.z) + v1n.z + v2n.z)/2);
 
+			     		var v1an = new THREE.Vector3(v1n.x+v2n.x-v2an.x, v1n.y+v2n.y-v2an.y, v1n.z+v2n.z-v2an.z);
+
+			     		var v1a = new THREE.Vector3( v1an.x + v1t.x, v1an.y + v1t.y, v1an.z + v1t.z);
+			     		var v2a = new THREE.Vector3( v2an.x + v2t.x, v2an.y + v2t.y, v2an.z + v2t.z);
+			     		//var v1a = new THREE.Vector3( v2n.x + v1t.x, v2n.y + v1t.y, v2n.z + v1t.z);
+			     		//var v2a = new THREE.Vector3( v1n.x + v2t.x, v1n.y + v2t.y, v1n.z + v2t.z);
+
+
+			     		/*projectonvector: function (c){void 0===a&&
+			     			(a=new THREE.Vector3);
+			     			a.copy(c).normalize();
+			     			b=this.dot(a);
+			     			return this.copy(a).multiplyScalar(b)}
+						*/
 			     		//console.log(v2n.x + " <-2nx  1tx-> " + v1t.x + " " + v2n.y + " <-2ny  1ty-> " + v1t.y  + " " + v2n.z + " <-2nz  1tz-> "  + v1t.z + "<- hela v1a");
-			     		//console.log(v1a.length() + "<- längd v1a innan setlength");
+			     		//console.log(v1a.setLength);
+			     		/*function (a){
+			     			var b=this.length();
+			     			0!==b&&a!==b&&this.multiplyScalar(a/b);
+			     			return this} */
+
 			     		v1a.setLength(l1);
 			     		v2a.setLength(l2);
-			     		console.log(v1a.length() + "<- längd v1a efter setlength");
+			     		//console.log(v1a.length() + "<- längd v1a efter setlength");
 			     		//assign the computed velosity (times a energy loss) to the balls in the vector.
-			     		balls[i].dx = v1a.x*secondary_energy_loss;
-			     		balls[i].dy = v1a.y*secondary_energy_loss;
-			     		balls[i].dz = v1a.z*secondary_energy_loss;
+			     		balls[i].dx = v1a.x;//*secondary_energy_loss;
+			     		balls[i].dy = v1a.y;//*secondary_energy_loss;
+			     		balls[i].dz = v1a.z;//*secondary_energy_loss;
 
-			     		balls[j].dx = v2a.x*secondary_energy_loss;
-			     		balls[j].dy = v2a.y*secondary_energy_loss;
-			     		balls[j].dz = v2a.z*secondary_energy_loss;
+			     		balls[j].dx = v2a.x;//*secondary_energy_loss;
+			     		balls[j].dy = v2a.y;//*secondary_energy_loss;
+			     		balls[j].dz = v2a.z;//*secondary_energy_loss;
 
 			     		if(balls[i].count >= (max_nr_of_bounces-3))
 			     		balls[i].count = max_nr_of_bounces-3;
-			     		if(balls[i].count >= (max_nr_of_bounces-3))
+			     		if(balls[j].count >= (max_nr_of_bounces-3))
 			     		balls[j].count = max_nr_of_bounces-3;
 
 			     		//console.log(normal.length() + "<- längd normal");
 			     		//var norm = new THREE.Vector3( p1.x-p2.x, p1.y-p2.y, p1.z-p2.z );
 			     		//var len = norm.length();
 			     		if(len>0){
-			     			var coeff = (radius*2)/len;
-			     			console.log(coeff + " coeff");
+			     			var coeff = (radius)/len;
+			     			console.log(len + " <- len, coeff ->" + coeff);
 				     		balls[i].x += coeff*normal.x;
 				     		balls[i].y += coeff*normal.y;
 				     		balls[i].z += coeff*normal.z;
@@ -346,17 +367,19 @@
 				     		balls[j].x -= coeff*normal.x;
 				     		balls[j].y -= coeff*normal.y;
 				     		balls[j].z -= coeff*normal.z;
+				     		console.log(normal.length());
 				     	}
 			     		else
 			     		{
 			     			console.log("wtf");
-				     		balls[i].x += normal.x;
-				     		balls[i].y += normal.y;
-				     		balls[i].z += normal.z;
+			     			console.log(normal.length() + " <- normal, len ->" + len);
+				     		balls[i].x += 1;
+				     		balls[i].y += 1;
+				     		balls[i].z += 1;
 
-				     		balls[j].x -= normal.x;
-				     		balls[j].y -= normal.y;
-				     		balls[j].z -= normal.z;
+				     		balls[j].x -= 1;
+				     		balls[j].y -= 1;
+				     		balls[j].z -= 1;
 				     	}
 			     		/*
 			     		balls[i].x = balls[i].x  + 1.5*balls[i].dx;   // update position, constant velocity
