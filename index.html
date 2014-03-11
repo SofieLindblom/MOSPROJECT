@@ -14,7 +14,7 @@
 			
 			//Global variables
 			var balls = []; 
-			var Nr_of_balls = 200;
+			var Nr_of_balls = 100;
 	      	var primary_energy_loss = 0.9;
 	      	var secondary_energy_loss = 0.95;
 	      	var max_nr_of_bounces = 20;
@@ -50,10 +50,6 @@
 			//controls.keys = [ 65, 83, 68 ];
 			controls.addEventListener( 'change', render );
 			window.addEventListener( 'resize', onWindowResize, false );
-
-			//Axis helper
-			var axisHelper = new THREE.AxisHelper( 10 );
-			scene.add( axisHelper );
 
        		//Add lightning
 			var light = new THREE.SpotLight();

@@ -13,6 +13,7 @@
 \usepackage{url}
 \usepackage{babel}
 \usepackage[latin1]{inputenc}
+\usepackage{color}
 
 
 \headsep          0.25in
@@ -32,7 +33,7 @@
 
 \addto\captionsswedish{
   \renewcommand{\contentsname}
-    {Innehï¿½llsfï¿½rteckning}
+    {Innehållsförteckning}
 }
 
 \begin{document}
@@ -50,7 +51,7 @@
 %	HEADING SECTIONS
 %----------------------------------------------------------------------------------------
 
-\textsc{\LARGE Linköpings Universitet}\\[1.7cm] % Name of your university/college
+\textsc{\LARGE \color{red}Linköpings Universitet}\\[1.7cm] % Name of your university/college
 \textsc{\Large Modelleringsprojekt}\\[0.5cm] % Major heading such as course name
 \textsc{\large TNM085}\\[0.5cm] % Minor heading such as course title
 
@@ -82,9 +83,6 @@ Anna \textsc{Lombardi} \\% Supervisor's Name
 \end{flushright}
 \end{minipage}
 
-% If you don't want a supervisor, uncomment the two lines below and remove the section above
-%\Large \emph{Author:}\\
-%John \textsc{Smith}\\[3cm] % Your name
 
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
@@ -96,16 +94,15 @@ Anna \textsc{Lombardi} \\% Supervisor's Name
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
 
-%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
- 
+  \includegraphics[width=8cm]{Figures/Cover_Page.eps}  
 %----------------------------------------------------------------------------------------
 
 \vfill % Fill the rest of the page with whitespace
-
+ 
 \end{titlepage}
 
 \begin{abstract}
-Här ska sammanfattning in
+I kursen TNM085, modelleringsprojekt skapas ett projekt vars syfte är att modellera ett fysikaliskt system av valfri typ. I den här rapporten redogörs om hur ett antal kolliderande studsbollar simuleras. Inspirationen är hämtad från en reklam Sony gjorde 2009 där man släpper miljontals studsbollar ner för en gata i San Fransisco %\cite {Sony:12}.	
 \vfill
 \end{abstract}
 
@@ -122,8 +119,7 @@ Här ska sammanfattning in
 \setcounter{page}{1}
 
 \section{Inledning}
-
-Här ska inledning in
+Efter att ha resonerat kring att simulera luftballonger, rinnande vatten eller rök landade gruppen tillslut i beslutet att simulera studsbollar. Motiveringen till beslutet var att det på ett smidigt sätt skulle gå att involvera interaktivitet genom att användaren kan välja utvalda attribut som till exempel radien på studsbollarna. Huvudsakligt fokus har varit en fysikaliskt realistisk studs mellan boll och omgivning samt kollisionshanteringen mellan bollarna. Sekundärt fokus har varit möjlighet till interaktivitet för användaren och att simulera bollarna i en mer komplex omgivning.
 
 \begin{itemize}
 \item Så här gör man en lista
@@ -131,34 +127,12 @@ Här ska inledning in
 \item In Catilinam III
 \item In Catilinam IV
 \end{itemize}
-Est mihi iucunda in
-
 
 \section{Syfte}
-
-Här ska syfte in
-
+Syftet med det här projektet är att implementera fysiska samband i en teknisk tillämpning. Att kunna bemästra fysikaliska lagar och regler så pass väl att det är möjligt att avgöra vilka förenklingar som kan genomföras och fortfarande uppnå ett realistiskt resultat. Tanken är även att en introduktion till rapportskrivningsverktyget LaTex ska erhållas. 
 \chapter{Implementation}
 
- 
 
-
-\begin{table}[htbp]
-  \caption{Heading centred.}
-  \label{table_example}
-  \begin{tabular*}{\hsize}{lllll}
-\hline
-Xxxxx & Xxxxx & Xxxx & Xxxxx & Xxxxx \\
-      &       &      &       & xxxx  \\
-\hline
-X     & X     &      & XXX   &       \\
-XX    & XXX   & XX   & X     & XX    \\
-XXX   & X     & X    & XXX   & XXX   \\
-XXXX  & XX    &      & XX    & X     \\
-X XX  & XXX   & XX   & XXX   & XXXXX \\
-\hline
-  \end{tabular*}
-\end{table}
 
 
 \begin{figure}
@@ -169,23 +143,18 @@ X XX  & XXX   & XX   & XXX   & XXXXX \\
 \label{model_block}
 \end{figure}
 
-Figure \ref{model_block} is not by Cicero.
+Figure  is not by Cicero.
 Multa meo quodam dolore in vestro timore sanavi. Nunc si hunc exitum
 
 
-\section{Fï¿½rarbete}
-Some words might be appropriate describing equation \ref{e1}, if we
-had but time and space enough.
-\begin{equation}
-\frac{\partial F}{\partial
-t}=D\frac{\partial^2 F}{\partial x^2},
-\label{e1}
-\end{equation}
-Quare, patres conscripti, consulite vobis, prospicite patriae,
+\section{Förarbete}
+Arbetet inleddes med undersökningar av hur liknande problem lösts av andra. I ett tidigt skede övervägdes att simulera studsar med hjälp av fjäderekvationer och konservering av volym. Det insågs dock att ett bättre alternativ är att använda sig av en så kallad 'Coefficient of restitution' , både med avseende på komplexitet och beräkningstyngd vid simulering av ett stort antal bollar. //%\cite {M2:12}
 
+
+Det spenderades en del tid på att undersöka olika simuleringsverktyg, jämföra openGL och WebGL samt vilka bibliotek och resurser som bäst lämpar sig att använda. Efter undersökning och diskussion togs beslutet att använda three.js vilket är ett javascript-bibliotek som hanterar WebGL. %\cite{M3:14} 
 
 \section{Simuleringar i MATLAB}
-Also containing some text, and a figure (\ref{fig:plot_result}).
+Also containing some text, and a figure.
 \begin{figure}
  \begin{center}
    \includegraphics[width=7cm]{Figures/result.eps}  
@@ -195,7 +164,61 @@ Also containing some text, and a figure (\ref{fig:plot_result}).
 \end{figure}
 
 \subsection{1D}
-Bla Bla
+Som första steg modelleras en studsande boll i en dimension. Syftet med detta är att uppnå en god grundförståelse för att sedan utveckla modellen till flera dimensioner.
+
+\begin{figure}
+\begin{minipage}{.5\textwidth}
+ \begin{center}
+   \includegraphics[width=7cm]{Figures/Fig1.eps}  
+  \end{center}
+\caption{Figur 1. Position of bouncing ball 1D}
+   \label{fig:fig1}
+\end{figure}
+
+\begin{figure}
+ \begin{center}
+   \includegraphics[width=7cm]{Figures/Fig2.jpg}  
+  \end{center}
+\caption{Figur 2. Velocity of bouncing ball 1D}
+   \label{fig:fig2}
+\end{figure}
+
+För att verifiera framarbetade fysikaliska formler plottas positionen och hastigheten som funktion av tiden (Se figure (\ref{fig:fig1}) och (\ref{fig:fig2}) ). Det fysikaliska sambanden som MATLAB implementationen är baserad på visas i ekvation (1) - (4) med tillhörande beskrivning av inblandade variabler i tabell 1. 
+
+\begin{table}[htbp]
+  \caption{Tabell 1}
+  \label{table_example}
+  \begin{tabular*}{\hsize}{lllll}
+\hline
+ & VARIABLER & BESKRIVNING & VÄRDER \\
+\hline
+k    & Energiförlust vid kollision med marken     &  0.6 \\
+g    & Gravitationskraften   & 9.82   \\
+delta_t   & Tidsintervall mellan två uppdateringar    & 1 \\
+v[new]  & Hastighet i kommande uppdatering   &   -    \\
+v[old]  & Hastighet i nuvarande tillstånd  & - \\
+p[new]  & Position i kommande uppdatering  & - \\
+p[old]  & Position i nuvarande tillstånd  & - \\
+\hline
+  \end{tabular*}
+\end{table}
+
+Om boll slår i marken:
+\begin{equation}
+v[new] = - k * v[old],
+\label{e1}
+\end{equation}
+
+\begin{equation}
+p[new] = v[new] * delta_t,
+\label{e2}
+\end{equation}
+	
+
+
+Om boll faller fritt i y-led:
+v[new] = v[old] + g*delta_t		(3)
+p[new] = p[old] * v[old]*delta_t	(4)
 
 \subsection{2D}
 Bla Bla
@@ -211,7 +234,7 @@ t^{-\beta}g(x/t^\alpha)\exp(-|x|/t^\alpha)\)
 
 
 \chapter{Implementation}
-\section{Fï¿½renklingar}
+\section{Förenklingar}
 \section{Resultat}
 \section{Reflektion}
 
@@ -224,7 +247,7 @@ t^{-\beta}g(x/t^\alpha)\exp(-|x|/t^\alpha)\)
 \bibliographystyle{vancouver}
 \bibliography{bibsam}
 
-\addcontentsline{toc}{chapter}{Litteraturfï¿½rteckning}
+\addcontentsline{toc}{chapter}{Litteraturförteckning}
 
 \pagestyle{empty}
 
