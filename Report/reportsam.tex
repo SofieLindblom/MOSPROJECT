@@ -8,12 +8,15 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{theorem}
+\usepackage{hyperref}
+
 
 \usepackage{latexsym}
 \usepackage{url}
 \usepackage{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{color}
+\usepackage{epstopdf}
 
 
 \headsep          0.25in
@@ -148,42 +151,37 @@ Multa meo quodam dolore in vestro timore sanavi. Nunc si hunc exitum
 
 
 \section{Förarbete}
-Arbetet inleddes med undersökningar av hur liknande problem lösts av andra. I ett tidigt skede övervägdes att simulera studsar med hjälp av fjäderekvationer och konservering av volym. Det insågs dock att ett bättre alternativ är att använda sig av en så kallad 'Coefficient of restitution' , både med avseende på komplexitet och beräkningstyngd vid simulering av ett stort antal bollar. //%\cite {M2:12}
+Arbetet inleddes med undersökningar av hur liknande problem lösts av andra. I ett tidigt skede övervägdes att simulera studsar med hjälp av fjäderekvationer och konservering av volym. Det insågs dock att ett bättre alternativ är att använda sig av en så kallad 'Coefficient of restitution' , både med avseende på komplexitet och beräkningstyngd vid simulering av ett stort antal bollar. %\cite {M2:12}
+
+
+Det spenderades en del tid på att undersöka olika simuleringsverktyg, jämföra openGL och WebGL samt vilka bibliotek och resurser som bäst lämpar sig att använda. Efter undersökning och diskussion togs beslutet att använda three.js vilket är ett javascript-bibliotek som hanterar WebGL. %\cite{M3:14} 
+
+\section{Fysiskt System}
+Arbetet inleddes med undersökningar av hur liknande problem lösts av andra. I ett tidigt skede övervägdes att simulera studsar med hjälp av fjäderekvationer och konservering av volym. Det insågs dock att ett bättre alternativ är att använda sig av en så kallad 'Coefficient of restitution' , både med avseende på komplexitet och beräkningstyngd vid simulering av ett stort antal bollar. %\cite {M2:12}
 
 
 Det spenderades en del tid på att undersöka olika simuleringsverktyg, jämföra openGL och WebGL samt vilka bibliotek och resurser som bäst lämpar sig att använda. Efter undersökning och diskussion togs beslutet att använda three.js vilket är ett javascript-bibliotek som hanterar WebGL. %\cite{M3:14} 
 
 \section{Simuleringar i MATLAB}
 Also containing some text, and a figure.
-\begin{figure}
- \begin{center}
-   \includegraphics[width=7cm]{Figures/result.eps}  
-  \end{center}
-\caption{Another figure example}
-   \label{fig:plot_result}
-\end{figure}
+
 
 \subsection{1D}
 Som första steg modelleras en studsande boll i en dimension. Syftet med detta är att uppnå en god grundförståelse för att sedan utveckla modellen till flera dimensioner.
 
-\begin{figure}
-\begin{minipage}{.5\textwidth}
- \begin{center}
-   \includegraphics[width=7cm]{Figures/Fig1.eps}  
-  \end{center}
-\caption{Figur 1. Position of bouncing ball 1D}
-   \label{fig:fig1}
+\begin{figure}[h]
+\makebox[\textwidth]{%
+\includegraphics[width=0.49\textwidth]{Figures/Fig1.eps}%
+\hfill    
+\includegraphics[width=0.49\textwidth]{Figures/Fig2.jpg}%
+}% If you want some vertical space
+\caption{Hastighet och position för studsboll i 1D}
+\label{fig:fig1n2}
 \end{figure}
 
-\begin{figure}
- \begin{center}
-   \includegraphics[width=7cm]{Figures/Fig2.jpg}  
-  \end{center}
-\caption{Figur 2. Velocity of bouncing ball 1D}
-   \label{fig:fig2}
-\end{figure}
 
-För att verifiera framarbetade fysikaliska formler plottas positionen och hastigheten som funktion av tiden (Se figure (\ref{fig:fig1}) och (\ref{fig:fig2}) ). Det fysikaliska sambanden som MATLAB implementationen är baserad på visas i ekvation (1) - (4) med tillhörande beskrivning av inblandade variabler i tabell 1. 
+
+För att verifiera framarbetade fysikaliska formler plottas positionen och hastigheten som funktion av tiden (Se figur (\ref{fig:fig1n2}) ). Det fysikaliska sambanden som MATLAB implementationen är baserad på visas i ekvation (1) - (4) med tillhörande beskrivning av inblandade variabler i tabell 1. 
 
 \begin{table}[htbp]
   \caption{Tabell 1}
@@ -194,7 +192,7 @@ För att verifiera framarbetade fysikaliska formler plottas positionen och hastig
 \hline
 k    & Energiförlust vid kollision med marken     &  0.6 \\
 g    & Gravitationskraften   & 9.82   \\
-delta_t   & Tidsintervall mellan två uppdateringar    & 1 \\
+deltat   & Tidsintervall mellan två uppdateringar    & 1 \\
 v[new]  & Hastighet i kommande uppdatering   &   -    \\
 v[old]  & Hastighet i nuvarande tillstånd  & - \\
 p[new]  & Position i kommande uppdatering  & - \\
@@ -210,24 +208,185 @@ v[new] = - k * v[old],
 \end{equation}
 
 \begin{equation}
-p[new] = v[new] * delta_t,
+p[new] = v[new] * deltat,
 \label{e2}
 \end{equation}
 	
 
 
 Om boll faller fritt i y-led:
-v[new] = v[old] + g*delta_t		(3)
-p[new] = p[old] * v[old]*delta_t	(4)
+\begin{equation}
+v[new] = v[old] + g*deltat
+\label{e3}
+\end{equation}
 
-\subsection{2D}
-Bla Bla
+\begin{equation}
+p[new] = p[old] * v[old]*deltat
+\label{e4}
+\end{equation}
+
 
 \subsection{3D}
-Bla Bla
+I ett steg mot slutliga implementationen utökas modellen från en dimension till tre. Mellansteget i två dimensioner har exkluderats från rapporten då det är samma tillväga gångssätt som i denna 
+simulering. 
+
+Fysikaliska  sambanden är desamma som  i en  dimension. Skillnaden är  att  samtliga variabler utökas  från  en  till  tre  komponenter  (x,y,z). Bollen  får  en  initial  hastighet  (som  är  noll i  y­led,
+eftersom det är i det ledet som gravitationen verkar) och en initial position.
+
+Bollens  position  kontrolleras  mot  underlaget  på  samma  sätt  som  tidigare men utöver det så kontrolleras  även  om  kollision  med  väggarna i  en kub har inträffat. Kuben  har dimensionerna 
+300x300x300 och har sitt ena hörn placerat i origo (se figur \ref{fig:fig3}).
+
+
+\begin{figure}[h]
+ \begin{center}
+   \includegraphics[width=15cm]{Figures/Fig3.jpg}  
+  \end{center}
+\caption{Position av boll i 3D}
+   \label{fig:fig3}
+\end{figure}
+
+
+Totalt görs fem stycken kontroller, en för varje sida av kuben bortsett från taket. Om koordinatens värde i det led som kontrolleras överstiger 300 eller understiger noll görs en beräkning av en ny hastighet längs den axeln. Om ingen kollision inträffar uppdateras position och hastighet precis på samma sätt som i simuleringen i en dimension. Nedan är ett exempel på hur en kollison med kubens sida i x-led hanteras, samtlig kod finns även i Bilaga B.  
+
+För positionen i x­led då x-positionen är vid väggen:
+
+\begin{equation}
+v[new] = ­k*v[old]
+\label{(e5)}
+\end{equation}
+
+\begin{equation}
+p[new] = p[old] + v[new]*deltat
+\label{(e6)}
+\end{equation}
+
+För positionen i y­led:
+
+\begin{equation}
+v[new] = v[old]+ g*deltat
+\label{(e7)}
+\end{equation}
+
+\begin{equation}
+p[new] = p[old] + v[new]*deltat
+\label{(e8)}
+\end{equation}
+
+
+För positionen i z­led:
+
+\begin{equation}
+v[new] = v[old]
+p[new] = p[old] + v[new]*deltat
+\label{(e9)}
+\end{equation}
+
+
+
+Även  i  detta  exempel  används  en  räknare  för  att  undvika  ett  oändligt  antal  studsar. Hastigheten i respektive led plottas gentemot en tidsaxel för tydligare tolkning av resultatet (Se figur 7).
 
 
 \section{Simuleringar i WebGL}
+I den slutliga simulering används WebGL i kombination med three.js, målet är att simulera mer fysikaliskt realistiska kollisioner som även tar hänsyntill sneda sammanstötningar. Hastighetsvektorerna från de inblandade bollarna projiceras på två komposanter i kollisionens tangent- och normalriktningar. Tangenterna erhålles genom kryssprodukt med normalen och tangenten. Normalen erhålles genom ekvation 10 och tangenten genom att x- och y-koordinatens värden sätts till ett fixt värde, z-koordinatens värde räknas ut enligt ekvation 11, slutligen erhålles tangenten för de koliderande bollarna genom ekvation 12.
+
+\begin{table}[htbp]
+  \caption{Tabell 1}
+  \label{table_example}
+  \begin{tabular*}{\hsize}{lllll}
+\hline
+& VARIABLER & BESKRIVNING \\
+\hline
+& $Normal$ & Normalen för de kolliderande bollarna \\
+& $p1$ & Postionsvektor för boll nummer 1 \\
+& $p2$ & Postionsvektor för boll nummer 2 \\
+& $tz$ & tangentens z-koordinat \\
+& $Tangent$ & Tangenten för de kolliderande bollarna \\
+\hline
+  \end{tabular*}
+\end{table}
+
+\begin{equation}
+normal = p1.x-p2.x, p1.y-p2.y, p1.z-p2.z
+\label{(10)}
+\end{equation}
+
+\begin{equation}
+tz = (-(normal.x*0.3) - (normal.y*0.3) ) / normal.z
+\label{(11)}
+\end{equation}
+
+\begin{equation}
+Tangent = ( 0.3, 0.3, tz)
+\label{(12)}
+\end{equation}
+
+
+Tangentiella energin bevaras (cite Grahn Jansson) och energin i normalriktningen räknas ut enligt ekvation 15 och 16, dessa är härledda från ekvation 13 och 14.
+
+\begin{table}[htbp]
+  \caption{}
+  \label{table_example}
+  \begin{tabular*}{\hsize}{lllll}
+\hline
+ & VARIABLER & BESKRIVNING \\
+\hline
+& $V1t\prime$ & Boll nummer ett, tangentvektor innan kollision\\
+& $V2t\prime$ & Boll nummer två, tangentvektor innan kollision\\
+& $V1n\prime$ & Boll nummer ett, normalvektor innan kollision\\
+& $V2n\prime$ & Boll nummer två, normalvektor innan kollision\\
+%\hline
+& $V1t\prime\prime$ & Boll nummer ett, tangentvektor efter kollision\\
+& $V2t\prime\prime$ & Boll nummer två, tangentvektor efter kollision\\
+& $V1n\prime\prime$ & Boll nummer ett, normalvektor efter kollision\\
+& $V2n\prime\prime$ & Boll nummer två, normalvektor efter kollision\\
+& $e$     & Konstant för energiförlusten\\
+\hline
+  \end{tabular*}
+\end{table}
+
+
+Tangentiella hastighetsvektorer:
+
+\begin{equation}
+V1t\prime = V1t\prime\prime
+\label{(13)}
+\end{equation}
+
+\begin{equation}
+V2t\prime = V2t\prime\prime
+\label{(14)}
+\end{equation}
+
+Normalens hastighetsvektorer:
+
+\begin{equation}
+e = (V2n\prime\prime - V1n\prime\prime) / (V1n\prime - V2n\prime) 
+\label{(15)}
+\end{equation}
+
+\begin{equation}
+V1n\prime + V2n\prime = V1n\prime\prime + V2n\prime\prime 
+\label{(16)}
+\end{equation}
+
+\begin{equation}
+V1n\prime + V2n\prime = V1n\prime\prime + V2n\prime\prime 
+\label{(17)}
+\end{equation}
+
+\begin{equation}
+V2n\prime\prime = e(V1n\prime - V2n\prime) + V1n\prime + V2n\prime 
+\label{(18)}
+\end{equation}
+
+\begin{equation}
+V1n\prime\prime = v1n\prime + v2n\prime - v2n\prime
+\label{(19)}
+\end{equation}
+
+
+Slutligen erhålls bollarnas hastigheter efter kollisionen genom att tangentiella och normalens hastighetsvektorer adderas.
+
 A word or two to conclude,  and this even includes some
 inline maths: \(R(x,t)\sim
 t^{-\beta}g(x/t^\alpha)\exp(-|x|/t^\alpha)\)
@@ -235,10 +394,39 @@ t^{-\beta}g(x/t^\alpha)\exp(-|x|/t^\alpha)\)
 
 \chapter{Implementation}
 \section{Förenklingar}
+Genom hela processen har vi försummat att simulera deformation som vanligtviss uppstår vid studs eller kollision. Implementationen av deformation ansågs för krävande och kategoriserades som en möjlig utveckling av systemet.
+
+Ytterligare en förenkling som gjorts är att luftmotståndet försummats. Detta för att avlasta den redan beräkningstunga applikationen men framför allt för att den synliga inverkan på bollarna av luftmotståndet är knappt märkbar.
+
+Vid kollison mellan bollar samt mellan omgivning och bollar har energiförlusten approximerats genom att multiplicera med en konstant. Denna förenkling är relativt korrekt men för att konstanten ska vara precis bör hänsyn tagits till  ett flertalet variabler som till exempel elasticitet hos kolliderande föremål. Denna approximation hade liksom förenklingen med luftmotståndet ingen större inverkan på resultatet. 
+
+Grundidéen var bollarna skulle studsa ner för en gata snarlikt den bild från Sonys reklam som återfinns i figur 1. En första simulering gjordes dock i en förenklad miljö (en box) för att fastställa att  grundfunktionaliteten fungerar. 
+
+Bollarna får en initierad starthastighet, från början var det tänkt att gravitation, lutning och rotation skulle vara det som gav dem en initial hastighet och riktning. Rotationen som uppstår när bollarna krockar dels med varandra och dels med väggar och golv är en annan möjlig utvidgning av nuvarande applikation.
+
 \section{Resultat}
+Den slutliga applikationen kan köras genom att klicka \href{http://anton.arbring.se/mos}{här}. Stommen av programmet är skrivet i javascript med stöd av three.js. Koden är uppdelad i fyra block. I det första blocket deklareras allt i scenen (kamera, sfär-objekt, plan, lampor, mus-interaktion och renderare). I block två skapas bollarna och blir tilldelade en initial hastighet och position. Block tre består av animeringen, där det i varje tidsram anropas en funktion som kollar om kollision med väggar och andra bollar skett. I denna del av programmet sker även kontrollen om hur många studs varje boll gjort dittills i animationen. Som nämndes i Matlab-simulering implementerades en räknare för att förhindra oändligt antal studsar. Block fyra består av kollisionshanteringen om det i ett tidsintervall uppstått kollision. Koden återfinns i bilaga D och en bild från slutresultatet visas i figur \ref{fig:200balls}. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{./Figures/200balls}
+\caption{Slutlig simulering av 200 bollar}
+\label{fig:200balls}
+\end{figure}
+
+
+
+
+Det krävs inga specifika hårdvarukrav för att köra applikationen. Användaren behöver dock en webläsare som stödjer webGL.
+
+
 \section{Reflektion}
 
- Ego multa tacui, multa pertuli, multa concessi,
+Som sig så ofta inträffar går projektgruppen in med skyhöga ambitioner om vad som ska utföras under projektets gång. Andra kurser, engagemang och oförutsedda tidsdistraktioner kommer sedan i mellan och helt plötsligt är deadline runt hörnet. Det beskrivna scenariot är vad som hände denna projektgrupp. Men trots detta och det faktum att vi bara är tre personer är vi nöjda med resultatet.
+
+Det har varit lärorikt och intressant att gå från fysikaliska formler skrivna med pappor och penna hela vägen till att kunna se det implementerat live i sin webläsare. Gruppen har kämpat med att hitta gemensam tid att arbeta då alla läser olika kurser. Skriva rapport i LaTeX har även varit en stor utmaning för oss då alla är nybörjare. 
+
+Vårt mål är att hinna implementera viss interaktion mellan användaren och applikationen innan slutpresentationen. Om gruppen lyckas med detta är vi mycket nöjda med våra insatser i kursen och med slutresultatet. 
 
 
 
@@ -253,15 +441,12 @@ t^{-\beta}g(x/t^\alpha)\exp(-|x|/t^\alpha)\)
 
 \appendix
 
-\chapter{Proof of\dots}
+\chapter{1D Simulering i MATLAB}
 
 \label{app:proof1}
 
 \thispagestyle{empty}
 
-Proof\dots
-
-Bla 1
 
 \chapter{Second proof of\dots}
 

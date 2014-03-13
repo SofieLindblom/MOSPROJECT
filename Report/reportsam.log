@@ -1,15 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.3)  11 MAR 2014 17:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.3)  13 MAR 2014 09:52
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
 **reportsam.tex
-(./reportsam.tex
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/report.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size12.clo
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,27 +31,27 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/times.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
@@ -86,41 +92,41 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count100
@@ -128,294 +134,485 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/theorem.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\theorem.sty"
 Package: theorem 1995/11/23 v2.2c Theorem extension package (FMi)
 \theorem@style=\toks20
 \theorem@bodyfont=\toks21
 \theorempreskipamount=\skip46
 \theorempostskipamount=\skip47
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/thp.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\thp.sty"
 File: thp.sty 1995/11/23 v2.2c Theorem extension package (FMi)
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latexsym.sty
-Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
-\symlasy=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/05/16 v3.9f The Babel package
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-swedish/swedish.ldf
-Language: swedish 2005/03/31 v2.3d Swedish support from the babel system
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/05/16 v3.9f Babel common definitions
-\babel@savecnt=\count101
-\U@D=\dimen114
-)
-Package babel Info: Making " an active character on input line 90.
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks22
-\inpenc@posthook=\toks23
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-(./reportsam.aux)
-\openout1 = `reportsam.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 39.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen115
-\scratchbox=\box28
-\nofMPsegments=\count103
-\nofMParguments=\count104
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen116
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
-\everyMPtoPDFconversion=\toks25
-) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-)))
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen114
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count103
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count104
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen115
+\Fld@menulength=\count105
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count106
+\c@Item=\count107
+\c@Hfootnote=\count108
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count109
+\c@bookmark@seq@number=\count110
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip48
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\swedish.ldf"
+Language: swedish 2005/03/31 v2.3d Swedish support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count111
+\U@D=\dimen118
+)
+Package babel Info: Making " an active character on input line 90.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
 ))
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.aux
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Warning: Label `table_example' multiply defined.
+
+
+LaTeX Warning: Label `table_example' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 42.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count112
+\scratchdimen=\dimen119
+\scratchbox=\box28
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen120
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks25
+)
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 42.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count118
+)
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
+
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.out)
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.out)
+\@outlinefile=\write3
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 77.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 80.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 Package epstopdf Info: Source file: <Figures/Cover_Page.eps>
-(epstopdf)                    date: 2014-03-11 15:23:30
+(epstopdf)                    date: 2014-03-12 13:18:31
 (epstopdf)                    size: 3480047 bytes
 (epstopdf)             Output file: <Figures/Cover_Page-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-03-11 15:30:17
+(epstopdf)                    date: 2014-03-12 13:18:31
 (epstopdf)                    size: 308566 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figures/Cover_Page-eps-con
-verted-to.pdf Figures/Cover_Page.eps>
-(epstopdf)             \includegraphics on input line 97.
+(epstopdf)             Command: <epstopdf --outfile=Figures/Cover_Page-eps-conv
+erted-to.pdf Figures/Cover_Page.eps>
+(epstopdf)             \includegraphics on input line 100.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Cover_Page-eps-converted-to.pdf, id=1, 614.295pt x 794.97pt>
+<Figures/Cover_Page-eps-converted-to.pdf, id=71, 614.295pt x 794.97pt>
 File: Figures/Cover_Page-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Cover_Page-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Cover_Page-eps-converted-to.pdf used on input 
-line 97.
+line 100.
 (pdftex.def)             Requested size: 227.62204pt x 294.57098pt.
  [1
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Figur
-es/Cover_Page-eps-converted-to.pdf>]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Server/xampp/htdocs/th
+ree/dev/Report/Figures/Cover_Page-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
- [1] (./reportsam.toc)
-\tf@toc=\write3
-\openout3 = `reportsam.toc'.
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.110 \end{abstract}
+                     [1] (C:\Server\xampp\htdocs\three\dev\Report\reportsam.toc
+)
+\tf@toc=\write4
  [2
 
-] (./reportsam.lof)
-\tf@lof=\write4
-\openout4 = `reportsam.lof'.
-
+] (C:\Server\xampp\htdocs\three\dev\Report\reportsam.lof)
+\tf@lof=\write5
  [3
 
 ]
 Kapitel 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 125.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 128.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fusr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
- [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 128.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.136 \chapter
+              {Implementation} [1
 
 ]
 Kapitel 2.
 Package epstopdf Info: Source file: <Figures/block_simulink.eps>
-(epstopdf)                    date: 2006-10-17 13:54:58
+(epstopdf)                    date: 2014-03-03 17:33:33
 (epstopdf)                    size: 854227 bytes
 (epstopdf)             Output file: <Figures/block_simulink-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2014-03-03 14:46:07
+(epstopdf)                    date: 2014-03-03 17:33:33
 (epstopdf)                    size: 25638 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figures/block_simulink-eps
--converted-to.pdf Figures/block_simulink.eps>
-(epstopdf)             \includegraphics on input line 140.
+(epstopdf)             Command: <epstopdf --outfile=Figures/block_simulink-eps-
+converted-to.pdf Figures/block_simulink.eps>
+(epstopdf)             \includegraphics on input line 143.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/block_simulink-eps-converted-to.pdf, id=27, 433.62pt x 308.15125pt>
+<Figures/block_simulink-eps-converted-to.pdf, id=126, 433.62pt x 308.15125pt>
 File: Figures/block_simulink-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/block_simulink-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/block_simulink-eps-converted-to.pdf used on in
-put line 140.
+put line 143.
 (pdftex.def)             Requested size: 312.9803pt x 222.42825pt.
-
-
-LaTeX Warning: Reference `model_block' on page 2 undefined on input line 146.
-
-
-LaTeX Warning: Citation `M2:12' on page 2 undefined on input line 151.
-
-
-./reportsam.tex:154: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.154 D
-       et spenderades en del tid på att undersöka olika simuleringsverktyg, ...
-
-? 
-./reportsam.tex:154: Emergency stop.
- ...                                              
-                                                  
-l.154 D
-       et spenderades en del tid på att undersöka olika simuleringsverktyg, ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
- 
-Here is how much of TeX's memory you used:
- 3127 strings out of 493315
- 42429 string characters out of 6137905
- 103189 words of memory out of 5000000
- 6480 multiletter control sequences out of 15000+600000
- 27323 words of font info for 58 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 38i,6n,27p,613b,276s stack positions out of 5000i,500n,10000p,200000b,80000s
-./reportsam.tex:154:  ==> Fatal error occurred, no output PDF file produced!
-Command: <repstopdf --outfile=Figures/Fig1-eps-converted
--to.pdf Figures/Fig1.eps>
-(epstopdf)             \includegraphics on input line 172.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
+Package epstopdf Info: Source file: <Figures/Fig1.eps>
+(epstopdf)                    date: 2014-03-12 13:18:31
+(epstopdf)                    size: 1429735 bytes
+(epstopdf)             Output file: <Figures/Fig1-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-03-12 13:18:31
+(epstopdf)                    size: 38074 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/Fig1-eps-converted-
+to.pdf Figures/Fig1.eps>
+(epstopdf)             \includegraphics on input line 177.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Fig1-eps-converted-to.pdf, id=29, 614.295pt x 794.97pt>
+<Figures/Fig1-eps-converted-to.pdf, id=127, 614.295pt x 794.97pt>
 File: Figures/Fig1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Fig1-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Fig1-eps-converted-to.pdf used on input line 1
-72.
-(pdftex.def)             Requested size: 199.16928pt x 257.74355pt.
+77.
+(pdftex.def)             Requested size: 221.95674pt x 287.23218pt.
 
-./reportsam.tex:176: Extra }, or forgotten \endgroup.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.176 \end{figure}
-                  
-? 
-./reportsam.tex:176: Emergency stop.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.176 \end{figure}
-                  
-End of file on the terminal!
+<Figures/Fig2.jpg, id=128, 562.1pt x 421.575pt>
+File: Figures/Fig2.jpg Graphic file (type jpg)
+ <use Figures/Fig2.jpg>
+Package pdftex.def Info: Figures/Fig2.jpg used on input line 177.
+(pdftex.def)             Requested size: 221.95674pt x 166.4656pt.
 
- 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.185 
+       [2
+
+]
+Underfull \hbox (badness 10000) in alignment at lines 189--201
+[][][][][]
+ []
+
+
+Overfull \hbox (5.84764pt too wide) in paragraph at lines 230--232
+\OT1/ptm/m/n/12 get i tv[]a di-men-sio-ner har ex-klu-de-rats fr[]an rap-por-te
+n d[]a det []ar sam-ma tillv[]aga g[]angss[]att som i den-
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.232 
+       [3 <C:/Server/xampp/htdocs/three/dev/Report/Figures/block_simulink-eps-c
+onverted-to.pdf>]
+Overfull \hbox (35.24461pt too wide) in paragraph at lines 236--238
+[]\OT1/ptm/m/n/12 Bollens  po-si-tion  kon-trol-le-ras  mot  un-der-la-get  p[]
+a  sam-ma  s[]att  som  ti-di-ga-re men ut[]over det s[]a kon-
+ []
+
+<Figures/Fig3.jpg, id=159, 562.1pt x 421.575pt>
+File: Figures/Fig3.jpg Graphic file (type jpg)
+ <use Figures/Fig3.jpg>
+Package pdftex.def Info: Figures/Fig3.jpg used on input line 242.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig1-eps-converted-to.pdf> 
+<C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig2.jpg>]
+Underfull \hbox (badness 10000) in alignment at lines 295--305
+[][][][][]
+ []
+
+[5 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig3.jpg>]
+Underfull \hbox (badness 10000) in alignment at lines 329--344
+[][][][][]
+ []
+
+[6]
+Overfull \hbox (65.23843pt too wide) in paragraph at lines 390--393
+[]\OT1/ptm/m/n/12 A word or two to con-clu-de, and this even in-clu-des so-me i
+n-li-ne mat-hs: $\OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; t\OT1/c
+mr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 t[]g\OT1/cmr/m/n/12 (\OML/cmm/m
+/it/12 x=t[]\OT1/cmr/m/n/12 ) [](\OMS/cmsy/m/n/12  j\OML/cmm/m/it/12 x\OMS/cmsy
+/m/n/12 j\OML/cmm/m/it/12 =t[]\OT1/cmr/m/n/12 )$ 
+ []
+
+[7]
+Kapitel 3.
+<./Figures/200balls.png, id=201, 448.67625pt x 373.395pt>
+File: ./Figures/200balls.png Graphic file (type png)
+
+<use ./Figures/200balls.png>
+Package pdftex.def Info: ./Figures/200balls.png used on input line 412.
+(pdftex.def)             Requested size: 317.07613pt x 263.88164pt.
+ [8
+
+]
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.bbl [9 <C:/Server/xampp/htdo
+cs/three/dev/Report/Figures/200balls.png>]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [10
+
+]
+Bilaga A.
+[11
+
+]
+Bilaga B.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+[12
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+ (C:\Server\xampp\htdocs\three\dev\Report\reportsam.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package rerunfilecheck Info: File `reportsam.out' has not changed.
+(rerunfilecheck)             Checksum: 36A8059C3C97DADDE9EFDFA7B53DD620;978.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+ ) 
 Here is how much of TeX's memory you used:
- 3135 strings out of 493315
- 42625 string characters out of 6137905
- 104189 words of memory out of 5000000
- 6487 multiletter control sequences out of 15000+600000
- 27842 words of font info for 59 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 38i,8n,27p,613b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
-./reportsam.tex:176:  ==> Fatal error occurred, no output PDF file produced!
+ 6632 strings out of 493921
+ 96204 string characters out of 3144877
+ 179282 words of memory out of 3000000
+ 9739 multiletter control sequences out of 15000+200000
+ 28949 words of font info for 60 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 30i,9n,28p,953b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on reportsam.pdf (16 pages, 933702 bytes).
+PDF statistics:
+ 265 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+
