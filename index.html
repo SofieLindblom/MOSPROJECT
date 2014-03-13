@@ -14,17 +14,16 @@
 			
 			//Global variables
 			var balls = []; 
-			var Nr_of_balls = 100;
+			var Nr_of_balls = 150;
 	      	var primary_energy_loss = 0.9;
 	      	var secondary_energy_loss = 0.95;
 	      	var max_nr_of_bounces = 20;
 	      	var time = 0;
 	      	var radius = 1;
-	      	//var dt = 0;
 	      	var temp = 0.0;
 	      	var change;
 
-			//Set up Scene
+			//Block 1 Set up Scene
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -39,7 +38,6 @@
 
 			//Mouse navigation
 			var controls = new THREE.TrackballControls( camera );
-
 			controls.rotateSpeed = 1.0;
 			controls.zoomSpeed = 1.2;
 			controls.panSpeed = 0.8;
@@ -47,7 +45,6 @@
 			controls.noPan = false;
 			controls.staticMoving = true;
 			controls.dynamicDampingFactor = 0.3;
-			//controls.keys = [ 65, 83, 68 ];
 			controls.addEventListener( 'change', render );
 			window.addEventListener( 'resize', onWindowResize, false );
 
@@ -56,16 +53,6 @@
 	      	light.position.set( 10, 100, 50 );
 	      	scene.add(light);
 	      	light.castShadow = true;
-
-			/*var litCube = new THREE.Mesh(
-	        new THREE.CubeGeometry(2, 3, 7),
-	        new THREE.MeshLambertMaterial({color: 0x00FFFF}));
-	      	litCube.position.y = 1;
-	      	litCube.position.x = 1;
-	      	litCube.position.z = 1;
-	      	litCube.castShadow = true;
-	      	litCube.receiveShadow = true;
-	      	scene.add(litCube);*/
 
 	      	//Add ground plane
 	      	var planeGeo = new THREE.PlaneGeometry(100, 100, 10, 10);
@@ -83,7 +70,7 @@
 			scene.add(plane);
 
 			//Create balls and store in array
-			var geom = new THREE.SphereGeometry(1,16,16);
+			var geom = new THREE.SphereGeometry(radius,16,16);
 			    for (var i = 0; i < Nr_of_balls; i++) {
 				        var ball = {};
 				        ball.obj = new THREE.Mesh( 
@@ -154,47 +141,28 @@
 			     }
 			}, false); //End navigation with arrow buttons
 
-			//Update object's positions: 60 frames/second (?)
+			//Update object's positions
 			function animate(t) {
 
-		        //litCube.position.x = Math.sin(t/1000)*7;
-		        //litCube.position.y = Math.cos(t/1000)*5;
-		        //litCube.position.z = 15;
-		        		        
-		        //Clock är inbyggd i threejs, tror det är vad vi ska använda, kika på andra balls exemplet
+		        //Frame based instead of time based implementation at this stage
 		        dt = t-time;
 		        time = t;
-		        //console.log(dt);
-		        //var dt = clock.getDelta(); 
-		        //dt = ((dt*60)/(1000))
-		        console.log("dt: " + dt);
 		        update_pos(dt)
-		        //console.log(t);
-		        
-		        
-		        //bounce_check(dt);
-		       
 
-		        
-			     controls.update();
-
-		
+		        //Update frame
+			    controls.update();
 
 		        camera.lookAt(scene.position);
-		        // renderer automatically clears unless autoClear = false
 		        renderer.render(scene, camera);
 		        window.requestAnimationFrame(animate, renderer.domElement);
 
 		    }; //End animate functon
-
-		    
+	    
 		    animate(new Date().getTime());
 
-
-
+		    //Update position of ball
 			function update_pos(dt){
 				var counter = 0;
-				//console.log(dt);
 		    	for (var i = 0; i < Nr_of_balls; i++) {
 		    	if(balls[i].count>max_nr_of_bounces && balls[i].y < -48)
 					{
@@ -207,7 +175,7 @@
 			 		if(balls[i].y > -49){
 					balls[i].dy =  balls[i].dy - (9.82/1000);
 					}
-					balls[i].x = balls[i].x  + balls[i].dx;   // update position, constant velocity
+					balls[i].x = balls[i].x  + balls[i].dx;   
 					balls[i].y = balls[i].y  + balls[i].dy;
 					balls[i].z = balls[i].z  + balls[i].dz;
 
@@ -216,204 +184,131 @@
 					{
 						counter++;
 					}
-
 					
 					balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i].z );
-
-
 				}
 		    }
-
+		    //Check collision with walls 
 		    function wall_check(ball)
 		    {
-		    	//Go through every ball and check for collision with walls and other balls
-		    	 
-		    			//If ball hits ground y-direction
-					    if(ball.y <= -49){
-					    	ball.dy =  -ball.dy*primary_energy_loss;
-					    	ball.dx =  ball.dx*secondary_energy_loss;
-					    	ball.dz =  ball.dz*secondary_energy_loss;
-					    	//ball.dy =  ball.dy - 9.82/1000;
+    			//If ball hits ground y-direction
+			    if(ball.y <= -49){
+			    	ball.dy =  -ball.dy*primary_energy_loss;
+			    	ball.dx =  ball.dx*secondary_energy_loss;
+			    	ball.dz =  ball.dz*secondary_energy_loss;
 
-					    	ball.y = -49;
-					    	if(ball.x < -49)
-					    		ball.x = -49;
-					    	else if (ball.x > 49)
-					    		ball.x = 49;
-					    	if(ball.z < -49)
-					    		ball.z = -49;
-					    	else if (ball.z > 49)
-					    		ball.z = 49;
+			    	ball.y = -49;
+			    	if(ball.x < -49)
+			    		ball.x = -49;
+			    	else if (ball.x > 49)
+			    		ball.x = 49;
+			    	if(ball.z < -49)
+			    		ball.z = -49;
+			    	else if (ball.z > 49)
+			    		ball.z = 49;
 
-					    	//ball.x = ball.x  + ball.dx;   // update position, constant velocity
-							//ball.y = ball.y  + ball.dy;
-							//ball.z = ball.z  + ball.dz;
-							ball.count++;
-							//Prevent infinite number of bounces
+					ball.count++;
 
-						}
-						else if(ball.x < -49 || ball.x > 49){
-					    	ball.dy =  ball.dy*secondary_energy_loss;
-					    	ball.dx =  -ball.dx*primary_energy_loss;
-					    	ball.dz =  ball.dz*secondary_energy_loss;
-					    	ball.dy =  ball.dy - 9.82/1000;
+				}
+				//If balls hit walls x-direction
+				else if(ball.x < -49 || ball.x > 49){
+			    	ball.dy =  ball.dy*secondary_energy_loss;
+			    	ball.dx =  -ball.dx*primary_energy_loss;
+			    	ball.dz =  ball.dz*secondary_energy_loss;
+			    	ball.dy =  ball.dy - 9.82/1000;
 
-					    	if(ball.x < -49)
-					    		ball.x = -49;
-					    	else
-					    		ball.x = 49;
-					    	if(ball.z < -49)
-					    		ball.z = -49;
-					    	else if(ball.z > 49)
-					    		ball.z = 49;
+			    	if(ball.x < -49)
+			    		ball.x = -49;
+			    	else
+			    		ball.x = 49;
+			    	if(ball.z < -49)
+			    		ball.z = -49;
+			    	else if(ball.z > 49)
+			    		ball.z = 49;
 
-					    	//ball.x = ball.x  + ball.dx;   // update position, constant velocity
-							//ball.y = ball.y  + ball.dy;
-							//ball.z = ball.z  + ball.dz;
-							ball.count++;
-						}
-						else if(ball.z < -49 || ball.z > 49){
-					    	ball.dy =  ball.dy*secondary_energy_loss;
-					    	ball.dx =  ball.dx*secondary_energy_loss;
-					    	ball.dz =  -ball.dz*primary_energy_loss;
-					    	ball.dy =  ball.dy - 9.82/1000;
+					ball.count++;
+				}
+				//If balls hit walls z-direction
+				else if(ball.z < -49 || ball.z > 49){
+			    	ball.dy =  ball.dy*secondary_energy_loss;
+			    	ball.dx =  ball.dx*secondary_energy_loss;
+			    	ball.dz =  -ball.dz*primary_energy_loss;
+			    	ball.dy =  ball.dy - 9.82/1000;
 
+			    	if(ball.z < -49)
+			    		ball.z = -49;
+			    	else
+			    		ball.z = 49;
 
-					    	if(ball.z < -49)
-					    		ball.z = -49;
-					    	else
-					    		ball.z = 49;
+					ball.count++;
+				}
+			
+		    }//End of wall_check function
 
-					    	//ball.x = ball.x  + ball.dx;   // update position, constant velocity
-							//ball.y = ball.y  + ball.dy;
-							//ball.z = ball.z  + ball.dz;
-							ball.count++;
-						}
-
-
-			     		/*
-			     		ball.x = ball.x  + ball.dx;   // update position, constant velocity
-						ball.y = ball.y  + ball.dy;
-						ball.z = ball.z  + ball.dz; 
-						
-						balls[j].x = balls[j].x  + balls[j].dx;   // update position, constant velocity
-						balls[j].y = balls[j].y  + balls[j].dy;
-						balls[j].z = balls[j].z  + balls[j].dz;
-						*/
-			     	 // end of if collision
-
-
-
-			 	 // end of j loop
-
-	 				
-
-
-			      // end of i loop
-
-
-					
-		    } // end of function
-
+			//Check collision with other balls
 			function ball_check(ball, i)
 		    {
-
 			     for (var j = 0; j < Nr_of_balls; j++) {
-			     	if(i!=j && collision(ball, balls[j]) == true)// && v2.dot(v1) < 0)
+			     	if(i!=j && collision(ball, balls[j]) == true)
 			     	{
-
-			     		//get velocities and positions for the colliding balls
+			     		//Velocities and positions for the colliding balls
 			     		var v1 = new THREE.Vector3( ball.dx, ball.dy, ball.dz );
 			     		var v2 = new THREE.Vector3( balls[j].dx, balls[j].dy, balls[j].dz );
 			     		var p1 = new THREE.Vector3( ball.x, ball.y, ball.z );
 			     		var p2 = new THREE.Vector3( balls[j].x, balls[j].y, balls[j].z );
-			     		//console.log(v1.length() + " vlength ");
+			     		
 			     		var l1 = v1.length();
 			     		var l2 = v2.length();
 			     		l1 *= secondary_energy_loss;
 			     		l2 *= secondary_energy_loss;
-			     		//console.log(l1 + " <- v1.length(), v2 -> " + l2);
-			     		//calculate the normal and tangent vectors before the collision
+			     		
+			     		//Calculate the normal and tangent vectors before the collision
 			     		v1.normalize();
 			     		v2.normalize();
-			     		//p1.normalize();
-			     		//p2.normalize();
-//			     		console.log(v1.length() + " <- v1 length");
+
 			     		var normal = new THREE.Vector3( p1.x-p2.x, p1.y-p2.y, p1.z-p2.z );
-//			     		console.log(normal.length() + " <- normal length");
-						
-
 						var len = normal.length();
-			     		//console.log(len + " <- normal length");
 			     		normal.normalize();
-
-
-			     		// http://stackoverflow.com/questions/11132681/what-is-a-formula-to-get-a-vector-perpendicular-to-another-vector		     		
+		     		
 			     		var tz = (-(normal.x*0.3) - (normal.y*0.3) ) / normal.z;
-			     		var tangent = new THREE.Vector3( 0.3, 0.3, tz);
-			     		
+			     		var tangent = new THREE.Vector3( 0.3, 0.3, tz);			     		
 			     		tangent.normalize();
-			     		//console.log(normal.x);
-			     		//console.log(normal.angleTo(tangent));
-
-			     		//get normal and tangent projections for v1 and v2
+			     		
+			     		//Normal and tangent projections for v1 and v2
 			     		var v1n = v1.projectOnVector(normal);
-			     		//console.log(v1n.length() );
 			     		var v1t = v1.projectOnVector(tangent);
-
 			     		var v2n = v2.projectOnVector(normal);
 			     		var v2t = v2.projectOnVector(tangent);
-
 			     		
-			     		//Formula for vi and v2 after collision from book
+			     		//Normal velocity vectors for v1 and v2 after collision
 			     		var v2an = new THREE.Vector3((secondary_energy_loss*(v1n.x - v2n.x) + v1n.x + v2n.x)/2, 
 			     										(secondary_energy_loss*(v1n.y - v2n.y) + v1n.y + v2n.y)/2,
 			     										(secondary_energy_loss*(v1n.z - v2n.z) + v1n.z + v2n.z)/2);
 			     		var v1an = new THREE.Vector3(v1n.x + v2n.x - v2an.x, 
 										     			v1n.y + v2n.y - v2an.y, 
 										     			v1n.z + v2n.z - v2an.z);
-
+			     		//Final velocity vectors after collision 
 			     		var v1a = new THREE.Vector3( v1an.x + v1t.x, v1an.y + v1t.y, v1an.z + v1t.z);
 			     		var v2a = new THREE.Vector3( v2an.x + v2t.x, v2an.y + v2t.y, v2an.z + v2t.z);
-			     		
-			     		// v1a = vel for ball 1 after collision = the normal composant of ball 2 + the tangent component for ball 1
-			     		//var v1a = new THREE.Vector3( v2n.x + v1t.x, v2n.y + v1t.y, v2n.z + v1t.z);
-			     		//var v2a = new THREE.Vector3( v1n.x + v2t.x, v1n.y + v2t.y, v1n.z + v2t.z);
-
-
-			     		/*projectonvector: function (c){void 0===a&&
-			     			(a=new THREE.Vector3);
-			     			a.copy(c).normalize();
-			     			b=this.dot(a);
-			     			return this.copy(a).multiplyScalar(b)}
-						*/
-			     		//console.log(v2n.x + " <-2nx  1tx-> " + v1t.x + " " + v2n.y + " <-2ny  1ty-> " + v1t.y  + " " + v2n.z + " <-2nz  1tz-> "  + v1t.z + "<- hela v1a");
-			     		//console.log(v1a.setLength);
-			     		/*function (a){
-			     			var b=this.length();
-			     			0!==b&&a!==b&&this.multiplyScalar(a/b);
-			     			return this} */
 
 			     		v1a.setLength(l2);
 			     		v2a.setLength(l1);
-			     		//console.log(v1a.length() + "<- längd v1a efter setlength");
-			     		//assign the computed velosity (times a energy loss) to the balls in the vector.
-			     		ball.dx = v1a.x;//*secondary_energy_loss;
-			     		ball.dy = v1a.y;//*secondary_energy_loss;
-			     		ball.dz = v1a.z;//*secondary_energy_loss;
 
-			     		balls[j].dx = v2a.x;//*secondary_energy_loss;
-			     		balls[j].dy = v2a.y;//*secondary_energy_loss;
-			     		balls[j].dz = v2a.z;//*secondary_energy_loss;
+			     		//Assign the resulting velocoties
+			     		ball.dx = v1a.x;
+			     		ball.dy = v1a.y;
+			     		ball.dz = v1a.z;
+
+			     		balls[j].dx = v2a.x;
+			     		balls[j].dy = v2a.y;
+			     		balls[j].dz = v2a.z;
 
 			     		if(ball.count >= (max_nr_of_bounces-3))
 			     		ball.count = max_nr_of_bounces-3;
 			     		if(balls[j].count >= (max_nr_of_bounces-3))
 			     		balls[j].count = max_nr_of_bounces-3;
 
-			     		//console.log(normal.length() + "<- längd normal");
-			     		//var norm = new THREE.Vector3( p1.x-p2.x, p1.y-p2.y, p1.z-p2.z );
-			     		//var len = norm.length();
+			     		//Possible method to distance colliding balls from each other
 			     		/*if(len>0){
 			     			var coeff = (radius*2 - len);
 			     			console.log("Len: " + len + " <- len, coeff ->" + coeff);
@@ -435,26 +330,25 @@
 				     		
 				     	}
 			     		else
-			     		{*/
-			     			
-			     			//console.log("Here it is 0 or larger than 2" + normal.length() + " <- normal, len ->" + len);
-				     		ball.x += 1*normal.x;
-				     		ball.y += 1*normal.y;
-				     		ball.z += 1*normal.z;
-
+			     		{			     			
 				     		//balls[j].x -= 1*normal.x;
 				     		//balls[j].y -= 1*normal.y;
 				     		//balls[j].z -= 1*normal.z;
-				     	//}
+				     	}*/
+			     			
+			     		ball.x += 1*normal.x;
+			     		ball.y += 1*normal.y;
+			     		ball.z += 1*normal.z;
+
 			     	return true;
-			     	} // end of if collision
 
+			     	} //End of if collision handling
 
+			 	}//End of looping through all balls
 
-			 	}
+		 	}//End of ball_check-function
 
-		 	}
-
+		    //Check distance between two balls center of mass
 		    function collision(ballA, ballB)
 		    {
 		    	var distance = new THREE.Vector3( ballA.x-ballB.x, ballA.y-ballB.y, ballA.z-ballB.z );
@@ -465,8 +359,8 @@
 		    	}
 		    	else
 		    		return false;
-
 		    }
+
 		    function degInRad(deg) {
 			    return deg * Math.PI / 180;
 			}  
