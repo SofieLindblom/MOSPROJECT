@@ -1,11 +1,18 @@
 \select@language {swedish}
+\contentsline {figure}{\numberline {1}{\ignorespaces Sk\"armbild fr\r an Sonys reklamfilm}}{1}{figure.0.1}
 \thispagestyle {empty}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of figure}}{3}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Hastighet och position f\"or studsboll i 1D}}{4}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Position\IeC {\nobreakspace }av boll i 3D}}{5}{figure.2.3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration av kollision med underlag}}{3}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Illustration av kollision mellan bollar}}{4}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Tv\r a bollar simulerade med VRML-simulator i MATLAB}}{6}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Blockschema \"over VRML-simuleringen i Simulink}}{6}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Hastighet och position f\"or studsboll i 1D}}{7}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Position\IeC {\nobreakspace }av boll i 3D}}{8}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Bollens hastighet i x-, y- respektive z-led}}{10}{figure.2.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Slutlig simulering av 200 bollar}}{9}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Slutlig simulering av 200 bollar}}{13}{figure.3.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

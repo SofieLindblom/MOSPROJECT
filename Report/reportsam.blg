@@ -1,5 +1,15 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: reportsam.aux
 The style file: vancouver.bst
-I found no \citation commands---while reading file reportsam.aux
 Database file #1: bibsam.bib
-(There was 1 error message)
+Warning--empty author and editor in sony
+Warning--missing publisher in sony
+Warning--empty author and editor in CoR
+Warning--missing publisher in CoR
+Warning--there's a month but no year in CoR
+Warning--empty author and editor in threeJS
+Warning--missing publisher in threeJS
+Warning--there's a month but no year in threeJS
+Warning--empty author and editor in matlab
+Warning--missing publisher in matlab
+Warning--there's a month but no year in matlab
+(There were 11 warnings)

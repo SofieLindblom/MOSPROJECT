@@ -1,3 +1,25 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{sony}
+Sony. Bravaria Sony; 2009.
+\newblock Available from: \url{http://www.youtube.com/watch?v=0\_bx8bnCoiU}.
+
+\bibitem{CoR}
+Research R. Coefficinet of Restitution;.
+\newblock Available from: \url{http://www.racquetresearch.com/coeffici.html}.
+
+\bibitem{threeJS}
+ThreeJS. Threejs Library;.
+\newblock Available from: \url{http://www.threejs.org}.
+
+\bibitem{matlab}
+Matlab. Collision in Matlab;.
+\newblock Available from:
+  \url{http://www.mathworks.se/help/simulink/examples/simulation-of-a-bouncing-ball.html}.
+
+\bibitem{mek}
+Jansson PA, Grahn R.
+\newblock Mekanik.
+\newblock Studentlittertaur; 2014.
 
 \end{thebibliography}

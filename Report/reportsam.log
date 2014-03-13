@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.3)  13 MAR 2014 09:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.3)  13 MAR 2014 15:26
 entering extended mode
 **reportsam.tex
 (C:\Server\xampp\htdocs\three\dev\Report\reportsam.tex
@@ -321,22 +321,25 @@ LaTeX Warning: Label `table_example' multiply defined.
 
 LaTeX Warning: Label `table_example' multiply defined.
 
+
+LaTeX Warning: Label `app:proof2' multiply defined.
+
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 41.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -355,7 +358,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \everyMPtoPDFconversion=\toks25
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 42.
+Package hyperref Info: Link coloring OFF on input line 41.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -364,132 +367,87 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 42.
-LaTeX Info: Redefining \pageref on input line 42.
-LaTeX Info: Redefining \nameref on input line 42.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (C:\Server\xampp\htdocs\three\dev\Report\reportsam.out)
 (C:\Server\xampp\htdocs\three\dev\Report\reportsam.out)
 \@outlinefile=\write3
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Try loading font information for U+msa on input line 79.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 80.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 79.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Package epstopdf Info: Source file: <Figures/Cover_Page.eps>
-(epstopdf)                    date: 2014-03-12 13:18:31
-(epstopdf)                    size: 3480047 bytes
-(epstopdf)             Output file: <Figures/Cover_Page-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-03-12 13:18:31
-(epstopdf)                    size: 308566 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figures/Cover_Page-eps-conv
-erted-to.pdf Figures/Cover_Page.eps>
-(epstopdf)             \includegraphics on input line 100.
-Package epstopdf Info: Output file is already uptodate.
-
-<Figures/Cover_Page-eps-converted-to.pdf, id=71, 614.295pt x 794.97pt>
-File: Figures/Cover_Page-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Figures/Cover_Page-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/Cover_Page-eps-converted-to.pdf used on input 
-line 100.
-(pdftex.def)             Requested size: 227.62204pt x 294.57098pt.
+<Figures/liu.png, id=95, 60.225pt x 60.225pt>
+File: Figures/liu.png Graphic file (type png)
+ <use Figures/liu.png>
+Package pdftex.def Info: Figures/liu.png used on input line 102.
+(pdftex.def)             Requested size: 226.48393pt x 226.50662pt.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Server/xampp/htdocs/th
-ree/dev/Report/Figures/Cover_Page-eps-converted-to.pdf>]
+ree/dev/Report/Figures/liu.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
+ <./Figures/insp.jpg, id=107, 602.25pt x 392.46625pt>
+File: ./Figures/insp.jpg Graphic file (type jpg)
+
+<use ./Figures/insp.jpg>
+Package pdftex.def Info: ./Figures/insp.jpg used on input line 116.
+(pdftex.def)             Requested size: 317.07613pt x 206.63474pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 \end{abstract}
-                     [1] (C:\Server\xampp\htdocs\three\dev\Report\reportsam.toc
-)
+l.123 \end{abstract}
+                     [1 <C:/Server/xampp/htdocs/three/dev/Report/Figures/insp.j
+pg>] (C:\Server\xampp\htdocs\three\dev\Report\reportsam.toc)
 \tf@toc=\write4
  [2
 
-] (C:\Server\xampp\htdocs\three\dev\Report\reportsam.lof)
+]
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.lof)
 \tf@lof=\write5
  [3
 
 ]
 Kapitel 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 128.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 128.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.136 \chapter
+l.148 \chapter
               {Implementation} [1
 
 ]
 Kapitel 2.
-Package epstopdf Info: Source file: <Figures/block_simulink.eps>
-(epstopdf)                    date: 2014-03-03 17:33:33
-(epstopdf)                    size: 854227 bytes
-(epstopdf)             Output file: <Figures/block_simulink-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2014-03-03 17:33:33
-(epstopdf)                    size: 25638 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figures/block_simulink-eps-
-converted-to.pdf Figures/block_simulink.eps>
-(epstopdf)             \includegraphics on input line 143.
-Package epstopdf Info: Output file is already uptodate.
-<Figures/block_simulink-eps-converted-to.pdf, id=126, 433.62pt x 308.15125pt>
-File: Figures/block_simulink-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Figures/block_simulink-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/block_simulink-eps-converted-to.pdf used on in
-put line 143.
-(pdftex.def)             Requested size: 312.9803pt x 222.42825pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
-Package epstopdf Info: Source file: <Figures/Fig1.eps>
-(epstopdf)                    date: 2014-03-12 13:18:31
-(epstopdf)                    size: 1429735 bytes
-(epstopdf)             Output file: <Figures/Fig1-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-03-12 13:18:31
-(epstopdf)                    size: 38074 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figures/Fig1-eps-converted-
-to.pdf Figures/Fig1.eps>
-(epstopdf)             \includegraphics on input line 177.
-Package epstopdf Info: Output file is already uptodate.
-
-<Figures/Fig1-eps-converted-to.pdf, id=127, 614.295pt x 794.97pt>
-File: Figures/Fig1-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Figures/Fig1-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/Fig1-eps-converted-to.pdf used on input line 1
-77.
-(pdftex.def)             Requested size: 221.95674pt x 287.23218pt.
-
-<Figures/Fig2.jpg, id=128, 562.1pt x 421.575pt>
-File: Figures/Fig2.jpg Graphic file (type jpg)
- <use Figures/Fig2.jpg>
-Package pdftex.def Info: Figures/Fig2.jpg used on input line 177.
-(pdftex.def)             Requested size: 221.95674pt x 166.4656pt.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+<./Figures/sys1.jpg, id=176, 475.7775pt x 546.04pt>
+File: ./Figures/sys1.jpg Graphic file (type jpg)
+ <use ./Figures/sys1.jpg>
+Package pdftex.def Info: ./Figures/sys1.jpg used on input line 179.
+(pdftex.def)             Requested size: 317.07613pt x 363.92023pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -498,121 +456,597 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.185 
-       [2
+l.186 \newpage
+               [2
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 189--201
+Underfull \hbox (badness 10000) in alignment at lines 196--213
 [][][][][]
  []
 
+<./Figures/sys2.png, id=189, 191.21437pt x 191.71625pt>
+File: ./Figures/sys2.png Graphic file (type png)
 
-Overfull \hbox (5.84764pt too wide) in paragraph at lines 230--232
-\OT1/ptm/m/n/12 get i tv[]a di-men-sio-ner har ex-klu-de-rats fr[]an rap-por-te
-n d[]a det []ar sam-ma tillv[]aga g[]angss[]att som i den-
- []
+<use ./Figures/sys2.png>
+Package pdftex.def Info: ./Figures/sys2.png used on input line 218.
+(pdftex.def)             Requested size: 317.07613pt x 317.9505pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.232 
-       [3 <C:/Server/xampp/htdocs/three/dev/Report/Figures/block_simulink-eps-c
-onverted-to.pdf>]
-Overfull \hbox (35.24461pt too wide) in paragraph at lines 236--238
-[]\OT1/ptm/m/n/12 Bollens  po-si-tion  kon-trol-le-ras  mot  un-der-la-get  p[]
-a  sam-ma  s[]att  som  ti-di-ga-re men ut[]over det s[]a kon-
+l.225 \newpage
+               [3 <C:/Server/xampp/htdocs/three/dev/Report/Figures/sys1.jpg>]
+[4 <C:/Server/xampp/htdocs/three/dev/Report/Figures/sys2.png>]
+Overfull \hbox (5.62782pt too wide) in paragraph at lines 263--264
+[]\OT1/ptm/m/n/12 Den re-sul-te-ra-de has-tig-he-ten erh[]alles ge-nom att ad-d
+e-ra has-tig-hets-kom-po-san-ter-na i tangentiell-
  []
 
-<Figures/Fig3.jpg, id=159, 562.1pt x 421.575pt>
-File: Figures/Fig3.jpg Graphic file (type jpg)
- <use Figures/Fig3.jpg>
-Package pdftex.def Info: Figures/Fig3.jpg used on input line 242.
-(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+<./Figures/vrml.png, id=215, 670.505pt x 562.1pt>
+File: ./Figures/vrml.png Graphic file (type png)
+ <use ./Figures/vrml.png>
+Package pdftex.def Info: ./Figures/vrml.png used on input line 290.
+(pdftex.def)             Requested size: 317.07613pt x 265.80807pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig1-eps-converted-to.pdf> 
+[5] <./Figures/block.png, id=226, 898.35625pt x 558.085pt>
+File: ./Figures/block.png Graphic file (type png)
+
+<use ./Figures/block.png>
+Package pdftex.def Info: ./Figures/block.png used on input line 301.
+(pdftex.def)             Requested size: 448.44069pt x 278.58197pt.
+Package epstopdf Info: Source file: <Figures/Fig1.eps>
+(epstopdf)                    date: 2014-03-12 13:18:31
+(epstopdf)                    size: 1429735 bytes
+(epstopdf)             Output file: <Figures/Fig1-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-03-12 13:18:31
+(epstopdf)                    size: 38074 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/Fig1-eps-converted-
+to.pdf Figures/Fig1.eps>
+(epstopdf)             \includegraphics on input line 315.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/Fig1-eps-converted-to.pdf, id=227, 614.295pt x 794.97pt>
+File: Figures/Fig1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figures/Fig1-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Fig1-eps-converted-to.pdf used on input line 3
+15.
+(pdftex.def)             Requested size: 221.95674pt x 287.23218pt.
+
+<Figures/Fig2.jpg, id=228, 562.1pt x 421.575pt>
+File: Figures/Fig2.jpg Graphic file (type jpg)
+ <use Figures/Fig2.jpg>
+Package pdftex.def Info: Figures/Fig2.jpg used on input line 315.
+(pdftex.def)             Requested size: 221.95674pt x 166.4656pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <C:/Server/xampp/htdocs/three/dev/Report/Figures/vrml.png> <C:/Server/xampp
+/htdocs/three/dev/Report/Figures/block.png>]
+Underfull \hbox (badness 10000) in alignment at lines 327--339
+[][][][][]
+ []
+
+[7 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig1-eps-converted-to.pdf> 
 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig2.jpg>]
-Underfull \hbox (badness 10000) in alignment at lines 295--305
+Overfull \hbox (5.84764pt too wide) in paragraph at lines 368--370
+\OT1/ptm/m/n/12 get i tv[]a di-men-sio-ner har ex-klu-de-rats fr[]an rap-por-te
+n d[]a det []ar sam-ma tillv[]aga g[]angss[]att som i den-
+ []
+
+
+Overfull \hbox (35.24461pt too wide) in paragraph at lines 374--376
+[]\OT1/ptm/m/n/12 Bollens  po-si-tion  kon-trol-le-ras  mot  un-der-la-get  p[]
+a  sam-ma  s[]att  som  ti-di-ga-re men ut[]over det s[]a kon-
+ []
+
+<Figures/Fig3.jpg, id=250, 562.1pt x 421.575pt>
+File: Figures/Fig3.jpg Graphic file (type jpg)
+ <use Figures/Fig3.jpg>
+Package pdftex.def Info: Figures/Fig3.jpg used on input line 379.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--391
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--391
+
+ []
+
+[8 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig3.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 422--424
+
+ []
+
+<./Figures/Fig4.jpg, id=257, 562.1pt x 421.575pt>
+File: ./Figures/Fig4.jpg Graphic file (type jpg)
+ <use ./Figures/Fig4.jpg>
+Package pdftex.def Info: ./Figures/Fig4.jpg used on input line 430.
+(pdftex.def)             Requested size: 448.44069pt x 336.3277pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 442--452
 [][][][][]
  []
 
-[5 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig3.jpg>]
-Underfull \hbox (badness 10000) in alignment at lines 329--344
+
+Underfull \hbox (badness 10000) in alignment at lines 477--492
 [][][][][]
  []
 
-[6]
-Overfull \hbox (65.23843pt too wide) in paragraph at lines 390--393
-[]\OT1/ptm/m/n/12 A word or two to con-clu-de, and this even in-clu-des so-me i
-n-li-ne mat-hs: $\OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; t\OT1/c
-mr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 t[]g\OT1/cmr/m/n/12 (\OML/cmm/m
-/it/12 x=t[]\OT1/cmr/m/n/12 ) [](\OMS/cmsy/m/n/12  j\OML/cmm/m/it/12 x\OMS/cmsy
-/m/n/12 j\OML/cmm/m/it/12 =t[]\OT1/cmr/m/n/12 )$ 
- []
+[9]
+Underfull \vbox (badness 1158) has occurred while \output is active []
 
-[7]
+ [10 <C:/Server/xampp/htdocs/three/dev/Report/Figures/Fig4.jpg>] [11]
 Kapitel 3.
-<./Figures/200balls.png, id=201, 448.67625pt x 373.395pt>
+<./Figures/200balls.png, id=299, 448.67625pt x 373.395pt>
 File: ./Figures/200balls.png Graphic file (type png)
 
 <use ./Figures/200balls.png>
-Package pdftex.def Info: ./Figures/200balls.png used on input line 412.
+Package pdftex.def Info: ./Figures/200balls.png used on input line 553.
 (pdftex.def)             Requested size: 317.07613pt x 263.88164pt.
- [8
+ [12
 
 ]
-(C:\Server\xampp\htdocs\three\dev\Report\reportsam.bbl [9 <C:/Server/xampp/htdo
-cs/three/dev/Report/Figures/200balls.png>]
+(C:\Server\xampp\htdocs\three\dev\Report\reportsam.bbl [13 <C:/Server/xampp/htd
+ocs/three/dev/Report/Figures/200balls.png>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+[]\OT1/ptm/m/n/12 Research R. Co-ef-fi-ci-net of Re-sti-tu-tion;.  Avai-lab-le 
+from: []$\OT1/pcr/m/n/12 http : / / www .$
+ []
 
-) [10
+) [14
 
 ]
 Bilaga A.
-[11
 
-]
+Overfull \hbox (15.03192pt too wide) in paragraph at lines 642--642
+[]        \OT1/pcr/m/n/12 v_vector(index_new) = v_vector(index_old) + grav*delt
+a_t;[] 
+ []
+
+
+Overfull \hbox (123.03188pt too wide) in paragraph at lines 642--642
+[]        \OT1/pcr/m/n/12 p_vector(index_new) = p_vector(index_old) + v_vector(
+index_old)*delta_t;[] 
+ []
+
+[15
+
+] [16]
 Bilaga B.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
-[12
+
+Overfull \hbox (22.23192pt too wide) in paragraph at lines 843--843
+[]    \OT1/pcr/m/n/12 if p_matrix(2, index_old) <= 0 %&& v_matrix(2, index_old)
+ <= 0[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(1, index_new) = p_matrix(1, index_old) + v_m
+atrix(1, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (137.43187pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(2, index_new) = -(0.90*v_matrix(2, index_old
+)) + grav(2)*delta_t;[] 
+ []
+
+
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(2, index_new) = v_matrix(2, index_new)*delta
+_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(3, index_new) = p_matrix(3, index_old) + v_m
+atrix(3, index_new)*delta_t;[] 
+ []
+
+[17
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+Overfull \hbox (0.63193pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(1, index_new) = -(0.90*v_matrix(1, index_old
+))[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(1, index_new) = p_matrix(1, index_old) + v_m
+atrix(1, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (79.8319pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(2, index_new) = v_matrix(2, index_old) + gra
+v(2)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(2, index_new) = p_matrix(2, index_old) + v_m
+atrix(2, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(3, index_new) = p_matrix(3, index_old) + v_m
+atrix(3, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(1, index_new) = -(0.90*v_matrix(1, index_old
+));[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(1, index_new) = p_matrix(1, index_old) + v_m
+atrix(1, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (79.8319pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(2, index_new) = v_matrix(2, index_old) + gra
+v(2)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(2, index_new) = p_matrix(2, index_old) + v_m
+atrix(2, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(3, index_new) = p_matrix(3, index_old) + v_m
+atrix(3, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(1, index_new) = p_matrix(1, index_old) + v_m
+atrix(1, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (79.8319pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(2, index_new) = v_matrix(2, index_old) + gra
+v(2)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(2, index_new) = p_matrix(2, index_old) + v_m
+atrix(2, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(3, index_new) = -(0.90*v_matrix(3, index_old
+));[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(3, index_new) = p_matrix(3, index_old) + v_m
+atrix(3, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(1, index_new) = p_matrix(1, index_old) + v_m
+atrix(1, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (79.8319pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(2, index_new) = v_matrix(2, index_old) + gra
+v(2)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(2, index_new) = p_matrix(2, index_old) + v_m
+atrix(2, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(3, index_new) = -(0.90*v_matrix(3, index_old
+));[] 
+ []
+
+[18]
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(3, index_new) = p_matrix(3, index_old) + v_m
+atrix(3, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(1, index_new) = p_matrix(1, index_old) + v_m
+atrix(1, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (79.8319pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 v_matrix(2, index_new) = v_matrix(2, index_old) + gra
+v(2)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(2, index_new) = p_matrix(2, index_old) + v_m
+atrix(2, index_new)*delta_t;[] 
+ []
+
+
+Overfull \hbox (187.83185pt too wide) in paragraph at lines 843--843
+[]        \OT1/pcr/m/n/12 p_matrix(3, index_new) = p_matrix(3, index_old) + v_m
+atrix(3, index_new)*delta_t;[] 
+ []
+
+[19]
+Overfull \hbox (22.23192pt too wide) in paragraph at lines 843--843
+[]\OT1/pcr/m/n/12 % Plot for position in (x,y,z) % plottar y upp[]at pga gravit
+ationen[] 
+ []
+
+[20] [21]
+Bilaga C.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 849.
+
+[22
+
+]
+Overfull \hbox (29.43192pt too wide) in paragraph at lines 948--948
+[]\OT1/pcr/m/n/12 ball_vector = [b1_p_matrix; b1_v_matrix; b2_p_matrix; b2_v_ma
+trix];[] 
+ []
+
+
+Overfull \hbox (22.23192pt too wide) in paragraph at lines 948--948
+[]\OT1/pcr/m/n/12 for i = 1:1:nr_of_balls % P_temp = ball_vector(((i-1*4)+1):i*
+4,dt)[] 
+ []
+
+
+Overfull \hbox (29.43192pt too wide) in paragraph at lines 948--948
+[]    \OT1/pcr/m/n/12 [p_temp,v_temp,count] = propagation(p_temp, v_temp, count
+, dt);[] 
+ []
+
+
+Overfull \hbox (195.03185pt too wide) in paragraph at lines 948--948
+[]    \OT1/pcr/m/n/12 d = (p1_temp(1)-p2_temp(1))^2 + (p1_temp(2)-p2_temp(2))^2
+ + (p1_temp(3)-p2_temp(3))^2;[] 
+ []
+
+[23]
+Overfull \hbox (22.23192pt too wide) in paragraph at lines 948--948
+[] \OT1/pcr/m/n/12 plot3(ball_vector(1,:), ball_vector(3,:), ball_vector(2,:), 
+'b');[] 
+ []
+
+
+Overfull \hbox (36.63191pt too wide) in paragraph at lines 948--948
+[] \OT1/pcr/m/n/12 plot3(ball_vector(9,:), ball_vector(11,:), ball_vector(10,:)
+, 'g');[] 
+ []
+
+
+Overfull \hbox (58.2319pt too wide) in paragraph at lines 1052--1052
+[]\OT1/pcr/m/n/12 function [ p_out, v_out, count ] = propagation( p_in, v_in, c
+ount, dt )[] 
+ []
+
+[24] [25] [26]
+Bilaga D.
+
+Overfull \hbox (144.63187pt too wide) in paragraph at lines 1434--1434
+[]\OT1/pcr/m/n/12 <script src="https://rawgithub.com/mrdoob/three.js/master/bui
+ld/three.js"></script>[] 
+ []
+
+
+Overfull \hbox (252.63182pt too wide) in paragraph at lines 1434--1434
+[]\OT1/pcr/m/n/12 var camera = new THREE.PerspectiveCamera( 75, window.innerWid
+th / window.innerHeight, 0.1, 1000 );[] 
+ []
+
+[27
+
+]
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 1434--1434
+[]       \OT1/pcr/m/n/12 var planeGeo = new THREE.PlaneGeometry(100, 100, 10, 1
+0);[] 
+ []
+
+
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 1434--1434
+[]\OT1/pcr/m/n/12 var planeMat = new THREE.MeshLambertMaterial({color: 0xFFFFFF
+});[] 
+ []
+
+
+Overfull \hbox (223.83183pt too wide) in paragraph at lines 1434--1434
+[]\OT1/pcr/m/n/12 var cube = new THREE.Mesh(new THREE.CubeGeometry(100, 100, 10
+0), new THREE.MeshBasicMaterial({[] 
+ []
+
+[28]
+Overfull \hbox (173.43185pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 camera.position.x -= 2;//((new THREE.Vector3(0, 1, 0)).
+normalize(), degInRad(1));[] 
+ []
+
+
+Overfull \hbox (202.23184pt too wide) in paragraph at lines 1434--1434
+[]              \OT1/pcr/m/n/12 //camera.rotateOnAxis((new THREE.Vector3(1, 0, 
+0)).normalize(), degInRad(1));[] 
+ []
+
+[29]
+Overfull \hbox (209.43184pt too wide) in paragraph at lines 1434--1434
+[]              \OT1/pcr/m/n/12 //camera.rotateOnAxis((new THREE.Vector3(0, 1, 
+0)).normalize(), degInRad(-1));[] 
+ []
+
+
+Overfull \hbox (209.43184pt too wide) in paragraph at lines 1434--1434
+[]              \OT1/pcr/m/n/12 //camera.rotateOnAxis((new THREE.Vector3(1, 0, 
+0)).normalize(), degInRad(-1));[] 
+ []
+
+
+Overfull \hbox (65.4319pt too wide) in paragraph at lines 1434--1434
+[]        \OT1/pcr/m/n/12 //Frame based instead of time based implementation at
+ this stage[] 
+ []
+
+
+Overfull \hbox (29.43192pt too wide) in paragraph at lines 1434--1434
+[]        \OT1/pcr/m/n/12 window.requestAnimationFrame(animate, renderer.domEle
+ment);[] 
+ []
+
+[30]
+Overfull \hbox (22.23192pt too wide) in paragraph at lines 1434--1434
+[]\OT1/pcr/m/n/12 balls[i].obj.position.set( balls[i].x , balls[i].y , balls[i]
+.z );[] 
+ []
+
+[31]
+Overfull \hbox (79.8319pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 var v2 = new THREE.Vector3( balls[j].dx, balls[j].dy, b
+alls[j].dz );[] 
+ []
+
+
+Overfull \hbox (58.2319pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 var p2 = new THREE.Vector3( balls[j].x, balls[j].y, bal
+ls[j].z );[] 
+ []
+
+
+Overfull \hbox (43.83191pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 //Calculate the normal and tangent vectors before the c
+ollision[] 
+ []
+
+
+Overfull \hbox (65.4319pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 var normal = new THREE.Vector3( p1.x-p2.x, p1.y-p2.y, p
+1.z-p2.z );[] 
+ []
+
+[32]
+Overfull \hbox (216.63184pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 var v2an = new THREE.Vector3((secondary_energy_loss*(v1
+n.x - v2n.x) + v1n.x + v2n.x)/2,[] 
+ []
+
+
+Overfull \hbox (7.83192pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 (secondary_energy_loss*(v1n.y - v2n.y) + v1n.y + v2n.y)
+/2,[] 
+ []
+
+
+Overfull \hbox (15.03192pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 (secondary_energy_loss*(v1n.z - v2n.z) + v1n.z + v2n.z)
+/2);[] 
+ []
+
+
+Overfull \hbox (144.63187pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 var v1a = new THREE.Vector3( v1an.x + v1t.x, v1an.y + v
+1t.y, v1an.z + v1t.z);[] 
+ []
+
+
+Overfull \hbox (144.63187pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 var v2a = new THREE.Vector3( v2an.x + v2t.x, v2an.y + v
+2t.y, v2an.z + v2t.z);[] 
+ []
+
+
+Overfull \hbox (29.43192pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 //Possible method to distance colliding balls from each
+ other[] 
+ []
+
+
+Overfull \hbox (0.63193pt too wide) in paragraph at lines 1434--1434
+[]      \OT1/pcr/m/n/12 console.log("Len: " + len + " <- len, coeff ->" + coeff
+);[] 
+ []
+
+[33]
+Overfull \hbox (202.23184pt too wide) in paragraph at lines 1434--1434
+[]     \OT1/pcr/m/n/12 var distance = new THREE.Vector3( ballA.x-ballB.x, ballA
+.y-ballB.y, ballA.z-ballB.z );[] 
+ []
+
+[34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1436.
+ [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1436.
  (C:\Server\xampp\htdocs\three\dev\Report\reportsam.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1436.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1436.
+
 Package rerunfilecheck Info: File `reportsam.out' has not changed.
-(rerunfilecheck)             Checksum: 36A8059C3C97DADDE9EFDFA7B53DD620;978.
+(rerunfilecheck)             Checksum: FC21D1987B1D577AC18B1D07F2E81E75;1430.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1436.
  ) 
 Here is how much of TeX's memory you used:
- 6632 strings out of 493921
- 96204 string characters out of 3144877
- 179282 words of memory out of 3000000
- 9739 multiletter control sequences out of 15000+200000
- 28949 words of font info for 60 fonts, out of 3000000 for 9000
+ 6756 strings out of 493921
+ 97482 string characters out of 3144877
+ 183644 words of memory out of 3000000
+ 9804 multiletter control sequences out of 15000+200000
+ 29464 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 30i,9n,28p,953b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,9n,28p,968b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/urw/times/utmri8a.pfb>
-Output written on reportsam.pdf (16 pages, 933702 bytes).
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on reportsam.pdf (39 pages, 917526 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 110 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
